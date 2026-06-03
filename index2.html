@@ -1,0 +1,1275 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BBT Art Academy — 50 anos formando talentos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Manrope:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared/styles.css" />
+  <link rel="stylesheet" href="home.css" />
+  <link rel="stylesheet" href="index2.css" />
+</head>
+<body data-palette="cream">
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="v2-header" id="v2-header">
+    <div class="v2-header-inner">
+      <a href="index.html" style="display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0;">
+        <div class="brand-mark">B</div>
+        <div>
+          <div class="brand-name">BBT Art Academy</div>
+          <span class="brand-sub">Desde 1975</span>
+        </div>
+      </a>
+      <nav class="v2-nav">
+        <a href="#academia" data-i18n="nav-academia">A Academia</a>
+        <a href="#modalidades" data-i18n="nav-modalidades">Modalidades</a>
+        <a href="estrutura.html" data-i18n="nav-estrutura">Estrutura</a>
+        <a href="#internacional" data-i18n="nav-internacional">Internacional</a>
+        <a href="cinquenta-anos.html" data-i18n="nav-50anos">50 Anos</a>
+        <a href="#contato" data-i18n="nav-contato">Contato</a>
+      </nav>
+      <div class="lang-toggle" id="v2-lang-toggle">
+        <button data-lang="pt" class="active">PT</button>
+        <span class="sep">/</span>
+        <button data-lang="en">EN</button>
+      </div>
+      <a href="agendar.html" class="v2-nav-cta" data-i18n="nav-cta">Agendar aula</a>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="v2-hero" id="hero">
+    <div class="v2-hero-inner">
+      <!-- Texto -->
+      <div class="v2-hero-text">
+        <div class="v2-hero-eyebrow" data-i18n="hero-eyebrow">Desde 1975</div>
+        <h1 class="v2-hero-h1" data-i18n="hero-h1">50 anos formando<br><em>talentos</em><br>no ballet.</h1>
+        <ul class="v2-hero-bullets">
+          <li data-i18n="hero-b1">Formação artística completa com 12 modalidades</li>
+          <li data-i18n="hero-b2">Método Vaganova com professores especializados</li>
+          <li data-i18n="hero-b3">Palco internacional e festivais reconhecidos</li>
+          <li data-i18n="hero-b4">Aulas para crianças, adolescentes e adultos</li>
+        </ul>
+        <div class="v2-hero-form-label" data-i18n="hero-form-label">Primeira aula gratuita!</div>
+        <form class="v2-hero-form" onsubmit="event.preventDefault()">
+          <input type="text" data-i18n-ph="ph-name" placeholder="Seu nome" />
+          <input type="tel" data-i18n-ph="ph-phone" placeholder="Telefone com DDD" />
+          <input type="email" data-i18n-ph="ph-email" placeholder="E-mail" />
+          <button type="submit" data-i18n="hero-btn">Agendar</button>
+        </form>
+        <p class="v2-hero-disclaimer" data-i18n="hero-disclaimer">Ao enviar você concorda com nossa política de privacidade</p>
+      </div>
+      <!-- Imagem -->
+      <div class="v2-hero-image">
+        <div class="v2-hero-img-wrap v2-ph">
+          <span class="v2-ph-label">ballet · barra clássica · alunas em formação</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== MARQUEE ===================== -->
+  <div class="marquee festivals-marquee">
+    <div class="marquee-eyebrow">
+      <span class="caption" data-i18n="marquee-eyebrow">— Festivais &amp; instituições parceiras</span>
+    </div>
+    <div class="marquee-track">
+      <span class="marquee-item festival-logo"><span class="festival-mark" aria-hidden="true"></span><span class="festival-name">Prix de Lausanne</span></span>
+      <span class="marquee-item festival-logo"><span class="festival-mark" aria-hidden="true"></span><span class="festival-name">Royal Academy of Dance</span></span>
+      <span class="marquee-item festival-logo"><span class="festival-mark" aria-hidden="true"></span><span class="festival-name">Bolshoi Ballet School</span></span>
+      <span class="marquee-item festival-logo"><span class="festival-mark" aria-hidden="true"></span><span class="festival-name">Youth America Grand Prix</span></span>
+      <span class="marquee-item festival-logo"><span class="festival-mark" aria-hidden="true"></span><span class="festival-name">Festival de Joinville</span></span>
+      <span class="marquee-item festival-logo"><span class="festival-mark" aria-hidden="true"></span><span class="festival-name">Vaganova Ballet Academy</span></span>
+      <span class="marquee-item festival-logo"><span class="festival-mark" aria-hidden="true"></span><span class="festival-name">Stuttgart Ballet</span></span>
+      <span class="marquee-item festival-logo"><span class="festival-mark" aria-hidden="true"></span><span class="festival-name">NYC Dance Project</span></span>
+      <!-- duplicado para loop infinito -->
+      <span class="marquee-item festival-logo"><span class="festival-mark" aria-hidden="true"></span><span class="festival-name">Prix de Lausanne</span></span>
+      <span class="marquee-item festival-logo"><span class="festival-mark" aria-hidden="true"></span><span class="festival-name">Royal Academy of Dance</span></span>
+      <span class="marquee-item festival-logo"><span class="festival-mark" aria-hidden="true"></span><span class="festival-name">Bolshoi Ballet School</span></span>
+      <span class="marquee-item festival-logo"><span class="festival-mark" aria-hidden="true"></span><span class="festival-name">Youth America Grand Prix</span></span>
+      <span class="marquee-item festival-logo"><span class="festival-mark" aria-hidden="true"></span><span class="festival-name">Festival de Joinville</span></span>
+      <span class="marquee-item festival-logo"><span class="festival-mark" aria-hidden="true"></span><span class="festival-name">Vaganova Ballet Academy</span></span>
+      <span class="marquee-item festival-logo"><span class="festival-mark" aria-hidden="true"></span><span class="festival-name">Stuttgart Ballet</span></span>
+      <span class="marquee-item festival-logo"><span class="festival-mark" aria-hidden="true"></span><span class="festival-name">NYC Dance Project</span></span>
+    </div>
+  </div>
+
+  <!-- ===================== STATS ===================== -->
+  <section class="v2-stats">
+    <div class="v2-stats-inner">
+      <div class="v2-stat">
+        <span class="v2-stat-num">50</span>
+        <span class="v2-stat-label" data-i18n="stat-1">anos de excelência</span>
+      </div>
+      <div class="v2-stat-sep"></div>
+      <div class="v2-stat">
+        <span class="v2-stat-num">2.400+</span>
+        <span class="v2-stat-label" data-i18n="stat-2">alunos formados</span>
+      </div>
+      <div class="v2-stat-sep"></div>
+      <div class="v2-stat">
+        <span class="v2-stat-num">38+</span>
+        <span class="v2-stat-label" data-i18n="stat-3">professores especializados</span>
+      </div>
+      <div class="v2-stat-sep"></div>
+      <div class="v2-stat">
+        <span class="v2-stat-num">12</span>
+        <span class="v2-stat-label" data-i18n="stat-4">modalidades</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROOF / RECONHECIMENTO ===================== -->
+  <section class="block proof" id="reconhecimento">
+    <div class="container">
+      <div class="block-head reveal">
+        <span class="eyebrow" data-i18n="proof-eyebrow">— Reconhecimento</span>
+        <h2 class="display-md" data-i18n="proof-title">Palco internacional,<br><em>raízes brasileiras.</em></h2>
+      </div>
+      <div class="proof-grid reveal-stagger">
+        <div class="proof-card">
+          <span class="caption">01</span>
+          <h4 class="display-sm">Prix de Lausanne</h4>
+          <p class="proof-cat" data-i18n="proof-cat-1">Concurso internacional · Suíça</p>
+          <p class="body" data-i18n="proof-meta-1">Finalistas · 2019 / 2022 / 2024</p>
+        </div>
+        <div class="proof-card">
+          <span class="caption">02</span>
+          <h4 class="display-sm">Youth America Grand Prix</h4>
+          <p class="proof-cat" data-i18n="proof-cat-2">Concurso internacional · EUA</p>
+          <p class="body" data-i18n="proof-meta-2">Top 12 · Nova York</p>
+        </div>
+        <div class="proof-card">
+          <span class="caption">03</span>
+          <h4 class="display-sm">Festival de Joinville</h4>
+          <p class="proof-cat" data-i18n="proof-cat-3">Festival nacional · Brasil</p>
+          <p class="body" data-i18n="proof-meta-3">Medalhas de ouro</p>
+        </div>
+        <div class="proof-card">
+          <span class="caption">04</span>
+          <h4 class="display-sm">Royal Academy of Dance</h4>
+          <p class="proof-cat" data-i18n="proof-cat-4">Certificação metodológica · Reino Unido</p>
+          <p class="body" data-i18n="proof-meta-4">Currículo certificado</p>
+        </div>
+        <div class="proof-card">
+          <span class="caption">05</span>
+          <h4 class="display-sm">Bolshoi Ballet School</h4>
+          <p class="proof-cat" data-i18n="proof-cat-5">Programa de intercâmbio · Rússia</p>
+          <p class="body" data-i18n="proof-meta-5">Mestre convidado anual</p>
+        </div>
+        <div class="proof-card">
+          <span class="caption">06</span>
+          <h4 class="display-sm">NYC Dance Project</h4>
+          <p class="proof-cat" data-i18n="proof-cat-6">Reconhecimento editorial · EUA</p>
+          <p class="body" data-i18n="proof-meta-6">Editorial 2023</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================== PROGRAMS TABS ===================== -->
+  <section class="v2-programs" id="modalidades">
+    <div class="v2-programs-inner">
+      <div class="v2-programs-head">
+        <h2 class="v2-section-h2" data-i18n="prog-h2">Para cada fase<br><em>da sua vida</em></h2>
+        <p class="v2-programs-sub" data-i18n="prog-sub">A BBT atende alunos de 4 anos até adultos — cada programa pensado para a faixa etária, o nível técnico e os objetivos de cada aluno. Doze caminhos para um mesmo palco.</p>
+      </div>
+
+      <!-- Tabs -->
+      <div class="v2-tabs" role="tablist">
+        <button class="v2-tab active" data-tab="infantil" role="tab" data-i18n="tab-infantil">Ballet Infantil</button>
+        <button class="v2-tab" data-tab="classico" role="tab" data-i18n="tab-classico">Ballet Clássico</button>
+        <button class="v2-tab" data-tab="adulto" role="tab" data-i18n="tab-adulto">Adultos</button>
+        <button class="v2-tab" data-tab="jazz" role="tab" data-i18n="tab-jazz">Jazz</button>
+        <button class="v2-tab" data-tab="cenico" role="tab" data-i18n="tab-cenico">Teatro Musical</button>
+        <button class="v2-tab" data-tab="audiovisual" role="tab" data-i18n="tab-audiovisual">Audiovisual</button>
+        <button class="v2-tab" data-tab="marcial" role="tab" data-i18n="tab-marcial">Artes Marciais</button>
+        <button class="v2-tab" data-tab="hiphop" role="tab" data-i18n="tab-hiphop">Hip Hop</button>
+        <button class="v2-tab" data-tab="ritmica" role="tab" data-i18n="tab-ritmica">Ginástica Rítmica</button>
+        <button class="v2-tab" data-tab="contemp" role="tab" data-i18n="tab-contemp">Dança Contemporânea</button>
+        <button class="v2-tab" data-tab="forro" role="tab" data-i18n="tab-forro">Forró Cabrueira</button>
+        <button class="v2-tab" data-tab="canto" role="tab" data-i18n="tab-canto">Canto Adulto</button>
+      </div>
+
+      <!-- Painel: Infantil -->
+      <div class="v2-tab-pane active" id="tab-infantil" role="tabpanel">
+        <div class="v2-tab-pane-inner">
+          <div class="v2-tab-img-wrap v2-ph" style="--accent:#c87a86;--accent-deep:#a85868;">
+            <span class="v2-ph-label">Ballet Infantil · 4 — 9 anos · iniciação artística</span>
+          </div>
+          <div class="v2-tab-text">
+            <div class="v2-tab-badge" data-i18n="in-badge">4 — 9 anos</div>
+            <h3 data-i18n="in-h3">Ballet Infantil</h3>
+            <h4 data-i18n="t-who">Para quem é?</h4>
+            <p data-i18n="in-p">Programa ideal para crianças a partir de 4 anos que desejam iniciar na dança com uma metodologia lúdica e acolhedora, que respeita o desenvolvimento natural de cada criança.</p>
+            <h4 data-i18n="in-what">O que a criança desenvolve?</h4>
+            <ul class="v2-checklist">
+              <li data-i18n="in-l1">Coordenação motora e ritmo musical</li>
+              <li data-i18n="in-l2">Postura e consciência corporal desde cedo</li>
+              <li data-i18n="in-l3">Concentração e disciplina de forma natural</li>
+              <li data-i18n="in-l4">Sociabilização, amizades e trabalho em grupo</li>
+              <li data-i18n="in-l5">Amor pela arte e expressão criativa</li>
+            </ul>
+            <div class="v2-tab-ctas">
+              <a href="agendar.html" class="v2-btn-primary" data-i18n="t-cta1">Agendar aula experimental</a>
+              <a href="modalidade.html#infantil" class="v2-btn-outline" data-i18n="t-cta2">Saiba mais</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Painel: Clássico -->
+      <div class="v2-tab-pane" id="tab-classico" role="tabpanel">
+        <div class="v2-tab-pane-inner">
+          <div class="v2-tab-img-wrap v2-ph" style="--accent:#c87a86;--accent-deep:#a85868;background:radial-gradient(circle at 55% 30%,rgba(168,88,104,.2),transparent 60%),radial-gradient(circle at 20% 75%,rgba(200,122,134,.12),transparent 50%),var(--bg-elev);">
+            <span class="v2-ph-label">Ballet Clássico · Método Vaganova · a partir de 10 anos</span>
+          </div>
+          <div class="v2-tab-text">
+            <div class="v2-tab-badge" data-i18n="cl-badge">A partir de 10 anos</div>
+            <h3 data-i18n="cl-h3">Ballet Clássico</h3>
+            <h4 data-i18n="t-who">Para quem é?</h4>
+            <p data-i18n="cl-p">Formação técnica completa pelo método russo Vaganova para alunos a partir de 10 anos, com vagas para iniciantes e avançados. A base para quem sonha com uma carreira profissional no ballet.</p>
+            <h4 data-i18n="t-what">O que o aluno desenvolve?</h4>
+            <ul class="v2-checklist">
+              <li data-i18n="cl-l1">Técnica clássica com o rigoroso Método Vaganova</li>
+              <li data-i18n="cl-l2">Preparação para competições nacionais e internacionais</li>
+              <li data-i18n="cl-l3">Apresentações em palco profissional</li>
+              <li data-i18n="cl-l4">Intercâmbios com o Bolshoi, Stuttgart e Royal Ballet</li>
+              <li data-i18n="cl-l5">Base sólida para carreira artística profissional</li>
+            </ul>
+            <div class="v2-tab-ctas">
+              <a href="agendar.html" class="v2-btn-primary" data-i18n="t-cta1">Agendar aula experimental</a>
+              <a href="modalidade.html#classico" class="v2-btn-outline" data-i18n="t-cta2">Saiba mais</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Painel: Adulto -->
+      <div class="v2-tab-pane" id="tab-adulto" role="tabpanel">
+        <div class="v2-tab-pane-inner">
+          <div class="v2-tab-img-wrap v2-ph" style="background:radial-gradient(circle at 55% 30%,rgba(140,108,160,.18),transparent 60%),radial-gradient(circle at 20% 75%,rgba(180,150,200,.12),transparent 50%),var(--bg-elev);">
+            <span class="v2-ph-label">Ballet para Adultos · todos os níveis</span>
+          </div>
+          <div class="v2-tab-text">
+            <div class="v2-tab-badge" data-i18n="ad-badge">Adultos — Todos os níveis</div>
+            <h3 data-i18n="ad-h3">Ballet para Adultos</h3>
+            <h4 data-i18n="t-who">Para quem é?</h4>
+            <p data-i18n="ad-p">Para quem sempre quis dançar, quer voltar ao ballet ou busca saúde, postura e bem-estar através da dança. Aulas adaptadas ao corpo adulto, sem restrição de nível.</p>
+            <h4 data-i18n="t-what">O que o aluno desenvolve?</h4>
+            <ul class="v2-checklist">
+              <li data-i18n="ad-l1">Técnica clássica adaptada ao corpo adulto</li>
+              <li data-i18n="ad-l2">Postura, elegância e consciência corporal</li>
+              <li data-i18n="ad-l3">Flexibilidade, força e condicionamento físico</li>
+              <li data-i18n="ad-l4">Bem-estar, qualidade de vida e autoconhecimento</li>
+              <li data-i18n="ad-l5">Realização pessoal e expressão artística</li>
+            </ul>
+            <div class="v2-tab-ctas">
+              <a href="agendar.html" class="v2-btn-primary" data-i18n="t-cta1">Agendar aula experimental</a>
+              <a href="modalidade.html#adultos" class="v2-btn-outline" data-i18n="t-cta2">Saiba mais</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Painel: Jazz -->
+      <div class="v2-tab-pane" id="tab-jazz" role="tabpanel">
+        <div class="v2-tab-pane-inner">
+          <div class="v2-tab-img-wrap v2-ph" style="background:radial-gradient(circle at 55% 30%,rgba(196,150,80,.20),transparent 60%),radial-gradient(circle at 20% 75%,rgba(220,180,100,.12),transparent 50%),var(--bg-elev);">
+            <span class="v2-ph-label">Jazz · Kids / Teens / Adultos</span>
+          </div>
+          <div class="v2-tab-text">
+            <div class="v2-tab-badge" data-i18n="t-kta">Kids / Teens / Adultos</div>
+            <h3>Jazz</h3>
+            <h4 data-i18n="t-who">Para quem é?</h4>
+            <p data-i18n="jz-p">Para quem quer dançar com energia, técnica e musicalidade. O jazz da BBT é ministrado para todas as faixas etárias, combinando técnica de dança com expressão e performance.</p>
+            <h4 data-i18n="t-what">O que o aluno desenvolve?</h4>
+            <ul class="v2-checklist">
+              <li data-i18n="jz-l1">Técnica de jazz com base em dança contemporânea</li>
+              <li data-i18n="jz-l2">Musicalidade, ritmo e interpretação</li>
+              <li data-i18n="jz-l3">Isolamentos, kicks e turns</li>
+              <li data-i18n="jz-l4">Expressão cênica e performance</li>
+              <li data-i18n="jz-l5">Preparação para apresentações e festivais</li>
+            </ul>
+            <div class="v2-tab-ctas">
+              <a href="agendar.html" class="v2-btn-primary" data-i18n="t-cta1">Agendar aula experimental</a>
+              <a href="modalidade.html#jazz" class="v2-btn-outline" data-i18n="t-cta2">Saiba mais</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Painel: Teatro Musical -->
+      <div class="v2-tab-pane" id="tab-cenico" role="tabpanel">
+        <div class="v2-tab-pane-inner">
+          <div class="v2-tab-img-wrap v2-ph" style="background:radial-gradient(circle at 55% 30%,rgba(196,120,80,.20),transparent 60%),radial-gradient(circle at 20% 75%,rgba(220,150,100,.12),transparent 50%),var(--bg-elev);">
+            <span class="v2-ph-label">Teatro Musical · dança + canto + interpretação</span>
+          </div>
+          <div class="v2-tab-text">
+            <div class="v2-tab-badge" data-i18n="t-kta">Kids / Teens / Adultos</div>
+            <h3 data-i18n="tm-h3">Teatro Musical</h3>
+            <h4 data-i18n="t-who">Para quem é?</h4>
+            <p data-i18n="tm-p">Para quem quer dominar as três linguagens do palco ao mesmo tempo: dança, canto e interpretação. O programa prepara o aluno para produções completas de teatro musical.</p>
+            <h4 data-i18n="t-what">O que o aluno desenvolve?</h4>
+            <ul class="v2-checklist">
+              <li data-i18n="tm-l1">Dança cênica e movimento teatral</li>
+              <li data-i18n="tm-l2">Técnica vocal aplicada ao teatro musical</li>
+              <li data-i18n="tm-l3">Interpretação e construção de personagem</li>
+              <li data-i18n="tm-l4">Presença de palco e carisma</li>
+              <li data-i18n="tm-l5">Participação em produções e espetáculos</li>
+            </ul>
+            <div class="v2-tab-ctas">
+              <a href="agendar.html" class="v2-btn-primary" data-i18n="t-cta1">Agendar aula experimental</a>
+              <a href="modalidade.html#teatro-musical" class="v2-btn-outline" data-i18n="t-cta2">Saiba mais</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Painel: Audiovisual -->
+      <div class="v2-tab-pane" id="tab-audiovisual" role="tabpanel">
+        <div class="v2-tab-pane-inner">
+          <div class="v2-tab-img-wrap v2-ph" style="background:radial-gradient(circle at 55% 30%,rgba(60,80,160,.18),transparent 60%),radial-gradient(circle at 20% 75%,rgba(80,100,180,.10),transparent 50%),var(--bg-elev);">
+            <span class="v2-ph-label">Interpretação para Audiovisual · TV · Cinema · Streaming</span>
+          </div>
+          <div class="v2-tab-text">
+            <div class="v2-tab-badge" data-i18n="av-badge">Teens e Adultos</div>
+            <h3 data-i18n="av-h3">Interpretação para Audiovisual</h3>
+            <h4 data-i18n="t-who">Para quem é?</h4>
+            <p data-i18n="av-p">Para quem quer atuar em TV, cinema, streaming e novela vertical. O programa forma atores prontos para o set, com técnica específica para câmera e linguagem audiovisual.</p>
+            <h4 data-i18n="t-what">O que o aluno desenvolve?</h4>
+            <ul class="v2-checklist">
+              <li data-i18n="av-l1">Interpretação para câmera — TV, cinema e streaming</li>
+              <li data-i18n="av-l2">Técnica para novela vertical (redes sociais)</li>
+              <li data-i18n="av-l3">Consciência corporal e expressão facial</li>
+              <li data-i18n="av-l4">Construção de personagem para audiovisual</li>
+              <li data-i18n="av-l5">Preparação para audições e testes</li>
+            </ul>
+            <div class="v2-tab-ctas">
+              <a href="agendar.html" class="v2-btn-primary" data-i18n="t-cta1">Agendar aula experimental</a>
+              <a href="modalidade.html#audiovisual" class="v2-btn-outline" data-i18n="t-cta2">Saiba mais</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Painel: Artes Marciais -->
+      <div class="v2-tab-pane" id="tab-marcial" role="tabpanel">
+        <div class="v2-tab-pane-inner">
+          <div class="v2-tab-img-wrap v2-ph" style="background:radial-gradient(circle at 55% 30%,rgba(80,140,100,.18),transparent 60%),radial-gradient(circle at 20% 75%,rgba(100,160,120,.12),transparent 50%),var(--bg-elev);">
+            <span class="v2-ph-label">Judô · Jiu-Jitsu · Maicon França · Carlson Gracie</span>
+          </div>
+          <div class="v2-tab-text">
+            <div class="v2-tab-badge" data-i18n="ma-badge">Crianças e Adultos</div>
+            <h3 data-i18n="ma-h3">Artes Marciais</h3>
+            <h4 data-i18n="t-who">Para quem é?</h4>
+            <p data-i18n="ma-p">A BBT oferece judô com Maicon França e jiu-jitsu na linhagem Carlson Gracie — modalidades que desenvolvem disciplina, respeito, autoconfiança e condicionamento físico em todas as idades.</p>
+            <h4 data-i18n="t-what">O que o aluno desenvolve?</h4>
+            <ul class="v2-checklist">
+              <li data-i18n="ma-l1">Judô com Maicon França — professor especializado</li>
+              <li data-i18n="ma-l2">Jiu-Jitsu — Linhagem Carlson Gracie</li>
+              <li data-i18n="ma-l3">Disciplina, respeito e ética marcial</li>
+              <li data-i18n="ma-l4">Autodefesa e autoconfiança real</li>
+              <li data-i18n="ma-l5">Condicionamento físico e equilíbrio mental</li>
+            </ul>
+            <div class="v2-tab-ctas">
+              <a href="agendar.html" class="v2-btn-primary" data-i18n="t-cta1">Agendar aula experimental</a>
+              <a href="modalidade.html#judo" class="v2-btn-outline" data-i18n="t-cta2">Saiba mais</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Painel: Hip Hop -->
+      <div class="v2-tab-pane" id="tab-hiphop" role="tabpanel">
+        <div class="v2-tab-pane-inner">
+          <div class="v2-tab-img-wrap v2-ph" style="background:radial-gradient(circle at 55% 30%,rgba(80,80,160,.22),transparent 60%),radial-gradient(circle at 20% 75%,rgba(60,60,140,.12),transparent 50%),var(--bg-elev);">
+            <span class="v2-ph-label">Hip Hop · Toninho Fontes · cultura urbana</span>
+          </div>
+          <div class="v2-tab-text">
+            <div class="v2-tab-badge" data-i18n="t-kta">Kids / Teens / Adultos</div>
+            <h3>Hip Hop</h3>
+            <h4 data-i18n="t-who">Para quem é?</h4>
+            <p data-i18n="hh-p">Para quem quer explorar a cultura urbana com técnica e autenticidade. Ministrado por Toninho Fontes, referência nacional no estilo, com turmas para todas as idades.</p>
+            <h4 data-i18n="t-what">O que o aluno desenvolve?</h4>
+            <ul class="v2-checklist">
+              <li data-i18n="hh-l1">Técnica de hip hop com Toninho Fontes</li>
+              <li data-i18n="hh-l2">Cultura urbana e identidade artística</li>
+              <li data-i18n="hh-l3">Ritmo, groove e improvisação</li>
+              <li data-i18n="hh-l4">Expressão corporal e criatividade</li>
+              <li data-i18n="hh-l5">Confiança e presença de palco</li>
+            </ul>
+            <div class="v2-tab-ctas">
+              <a href="agendar.html" class="v2-btn-primary" data-i18n="t-cta1">Agendar aula experimental</a>
+              <a href="modalidade.html#hiphop" class="v2-btn-outline" data-i18n="t-cta2">Saiba mais</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Painel: Ginástica Rítmica -->
+      <div class="v2-tab-pane" id="tab-ritmica" role="tabpanel">
+        <div class="v2-tab-pane-inner">
+          <div class="v2-tab-img-wrap v2-ph" style="background:radial-gradient(circle at 55% 30%,rgba(160,80,160,.20),transparent 60%),radial-gradient(circle at 20% 75%,rgba(140,60,140,.12),transparent 50%),var(--bg-elev);">
+            <span class="v2-ph-label">Ginástica Rítmica · CET Gym · alto rendimento</span>
+          </div>
+          <div class="v2-tab-text">
+            <div class="v2-tab-badge" data-i18n="gr-badge">A partir de 4 anos</div>
+            <h3 data-i18n="gr-h3">Ginástica Rítmica</h3>
+            <h4 data-i18n="t-who">Para quem é?</h4>
+            <p data-i18n="gr-p">Programa de alto rendimento em parceria com a CET Gym, para crianças e adolescentes que buscam desenvolvimento técnico e competitivo na ginástica rítmica.</p>
+            <h4 data-i18n="t-what">O que o aluno desenvolve?</h4>
+            <ul class="v2-checklist">
+              <li data-i18n="gr-l1">Técnica de GR com foco em alto rendimento</li>
+              <li data-i18n="gr-l2">Flexibilidade, equilíbrio e coordenação</li>
+              <li data-i18n="gr-l3">Manejo de aparelhos (fita, bola, arco, maças)</li>
+              <li data-i18n="gr-l4">Preparação para competições</li>
+              <li data-i18n="gr-l5">Postura e elegância corporal</li>
+            </ul>
+            <div class="v2-tab-ctas">
+              <a href="agendar.html" class="v2-btn-primary" data-i18n="t-cta1">Agendar aula experimental</a>
+              <a href="modalidade.html#ritmica" class="v2-btn-outline" data-i18n="t-cta2">Saiba mais</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Painel: Dança Contemporânea -->
+      <div class="v2-tab-pane" id="tab-contemp" role="tabpanel">
+        <div class="v2-tab-pane-inner">
+          <div class="v2-tab-img-wrap v2-ph" style="background:radial-gradient(circle at 55% 30%,rgba(80,120,160,.20),transparent 60%),radial-gradient(circle at 20% 75%,rgba(60,100,140,.12),transparent 50%),var(--bg-elev);">
+            <span class="v2-ph-label">Dança Contemporânea · pesquisa corporal</span>
+          </div>
+          <div class="v2-tab-text">
+            <div class="v2-tab-badge" data-i18n="dc-badge">Teens e Adultos</div>
+            <h3 data-i18n="dc-h3">Dança Contemporânea</h3>
+            <h4 data-i18n="t-who">Para quem é?</h4>
+            <p data-i18n="dc-p">Para quem quer ir além das técnicas tradicionais e explorar o movimento como linguagem artística — pesquisa corporal, improvisação e construção de identidade cênica.</p>
+            <h4 data-i18n="t-what">O que o aluno desenvolve?</h4>
+            <ul class="v2-checklist">
+              <li data-i18n="dc-l1">Pesquisa corporal e identidade artística</li>
+              <li data-i18n="dc-l2">Improvisação e composição coreográfica</li>
+              <li data-i18n="dc-l3">Consciência do movimento no espaço</li>
+              <li data-i18n="dc-l4">Expressão autoral e criatividade</li>
+              <li data-i18n="dc-l5">Diálogo entre técnica e liberdade</li>
+            </ul>
+            <div class="v2-tab-ctas">
+              <a href="agendar.html" class="v2-btn-primary" data-i18n="t-cta1">Agendar aula experimental</a>
+              <a href="modalidade.html#contemporanea" class="v2-btn-outline" data-i18n="t-cta2">Saiba mais</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Painel: Forró Cabrueira -->
+      <div class="v2-tab-pane" id="tab-forro" role="tabpanel">
+        <div class="v2-tab-pane-inner">
+          <div class="v2-tab-img-wrap v2-ph" style="background:radial-gradient(circle at 55% 30%,rgba(180,140,80,.22),transparent 60%),radial-gradient(circle at 20% 75%,rgba(160,120,60,.12),transparent 50%),var(--bg-elev);">
+            <span class="v2-ph-label">Forró Cabrueira · dança social brasileira</span>
+          </div>
+          <div class="v2-tab-text">
+            <div class="v2-tab-badge" data-i18n="t-adults">Adultos</div>
+            <h3 data-i18n="fc-h3">Forró Cabrueira</h3>
+            <h4 data-i18n="t-who">Para quem é?</h4>
+            <p data-i18n="fc-p">Para adultos que querem aprender o forró como dança social brasileira de verdade — com técnica, musicalidade e aquele espírito do forró autêntico que aproxima as pessoas.</p>
+            <h4 data-i18n="t-what">O que o aluno desenvolve?</h4>
+            <ul class="v2-checklist">
+              <li data-i18n="fc-l1">Técnica de forró — passos, condução e seguida</li>
+              <li data-i18n="fc-l2">Conexão, ritmo e comunicação a dois</li>
+              <li data-i18n="fc-l3">Musicalidade e interpretação dos ritmos nordestinos</li>
+              <li data-i18n="fc-l4">Convívio social e cultura brasileira</li>
+              <li data-i18n="fc-l5">Confiança para dançar em qualquer ambiente</li>
+            </ul>
+            <div class="v2-tab-ctas">
+              <a href="agendar.html" class="v2-btn-primary" data-i18n="t-cta1">Agendar aula experimental</a>
+              <a href="modalidade.html#forro" class="v2-btn-outline" data-i18n="t-cta2">Saiba mais</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Painel: Canto Adulto -->
+      <div class="v2-tab-pane" id="tab-canto" role="tabpanel">
+        <div class="v2-tab-pane-inner">
+          <div class="v2-tab-img-wrap v2-ph" style="background:radial-gradient(circle at 55% 30%,rgba(160,100,180,.20),transparent 60%),radial-gradient(circle at 20% 75%,rgba(140,80,160,.12),transparent 50%),var(--bg-elev);">
+            <span class="v2-ph-label">Canto Adulto · técnica vocal · expressão</span>
+          </div>
+          <div class="v2-tab-text">
+            <div class="v2-tab-badge" data-i18n="ca-badge">Adultos — Todos os níveis</div>
+            <h3 data-i18n="ca-h3">Canto Adulto</h3>
+            <h4 data-i18n="t-who">Para quem é?</h4>
+            <p data-i18n="ca-p">Para adultos que sempre quiseram cantar — seja para desenvolver a voz, superar o medo de cantar em público ou explorar o canto como expressão artística e bem-estar.</p>
+            <h4 data-i18n="t-what">O que o aluno desenvolve?</h4>
+            <ul class="v2-checklist">
+              <li data-i18n="ca-l1">Técnica vocal — respiração, apoio e projeção</li>
+              <li data-i18n="ca-l2">Afinação, dicção e expressão interpretativa</li>
+              <li data-i18n="ca-l3">Repertório variado — MPB, pop, lírica e musical</li>
+              <li data-i18n="ca-l4">Presença vocal e confiança para cantar</li>
+              <li data-i18n="ca-l5">Saúde e bem-estar através da voz</li>
+            </ul>
+            <div class="v2-tab-ctas">
+              <a href="agendar.html" class="v2-btn-primary" data-i18n="t-cta1">Agendar aula experimental</a>
+              <a href="modalidade.html#canto" class="v2-btn-outline" data-i18n="t-cta2">Saiba mais</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== NOVA SEDE ===================== -->
+  <section class="block venue" id="venue">
+    <div class="container">
+      <div class="venue-grid">
+        <div class="venue-img-wrap">
+          <div class="venue-img ph" data-label="ARCH · main studio — natural light, sprung floor">
+            <div class="ph-figure"><span>NOVA SEDE 2024</span><span>BBT · STUDIO A</span></div>
+          </div>
+          <div class="venue-img-2 ph" data-label="ARCH · facade detail">
+            <div class="ph-figure"><span>FAÇADE</span><span>—</span></div>
+          </div>
+        </div>
+        <div class="venue-text">
+          <span class="eyebrow" data-i18n="venue-eyebrow">— Nova sede</span>
+          <h2 class="display-md" data-i18n="venue-h2">Uma estrutura<br><em>à altura da nossa história.</em></h2>
+          <p class="lead" data-i18n="venue-lead">Em 2024, a BBT abriu as portas de sua nova sede na Av. Paulista — 1.800 m² desenhados ao redor da dança, com seis salas, auditório, café e um lounge para familiares.</p>
+          <div class="diff-list">
+            <div class="diff">
+              <span class="caption">01</span>
+              <div>
+                <h5 class="display-sm" data-i18n="venue-t1">Salas amplas</h5>
+                <p class="body" data-i18n="venue-d1">Pé-direito alto, barras profissionais e ventilação cruzada.</p>
+              </div>
+            </div>
+            <div class="diff">
+              <span class="caption">02</span>
+              <div>
+                <h5 class="display-sm" data-i18n="venue-t2">Piso profissional</h5>
+                <p class="body" data-i18n="venue-d2">Tablado de balé com camadas de absorção, instalado pela Harlequin Floors.</p>
+              </div>
+            </div>
+            <div class="diff">
+              <span class="caption">03</span>
+              <div>
+                <h5 class="display-sm" data-i18n="venue-t3">Localização premium</h5>
+                <p class="body" data-i18n="venue-d3">Av. Paulista, 1578 — esquina com a Rua Augusta, em frente ao MASP.</p>
+              </div>
+            </div>
+            <div class="diff">
+              <span class="caption">04</span>
+              <div>
+                <h5 class="display-sm" data-i18n="venue-t4">Apoio à família</h5>
+                <p class="body" data-i18n="venue-d4">Sala de espera, café e vestiários renovados.</p>
+              </div>
+            </div>
+          </div>
+          <a href="estrutura.html" class="btn btn-outline" data-i18n="venue-btn">Conhecer estrutura <span class="arrow"></span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== VIDEO ===================== -->
+  <section class="v2-video" id="internacional">
+    <div class="v2-video-inner">
+      <div class="v2-video-head">
+        <span class="eyebrow" data-i18n="video-eyebrow">— Vídeo institucional</span>
+        <h2 class="v2-section-h2" data-i18n="video-h2">Conheça a BBT<br><em>em 5 minutos</em></h2>
+      </div>
+      <div class="v2-video-frame" id="v2-video-frame">
+        <div class="v2-video-poster"></div>
+        <button class="v2-video-play" id="v2-video-btn" aria-label="Assistir ao vídeo institucional">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+          <span data-i18n="video-btn">Assistir</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TEACHERS ===================== -->
+  <section class="v2-teachers">
+    <div class="v2-teachers-inner">
+      <div class="v2-teachers-text">
+        <span class="eyebrow" data-i18n="teach-eyebrow">— Corpo docente</span>
+        <h2 class="v2-section-h2" data-i18n="teach-h2">Mestre, guia<br><em>e referência</em></h2>
+        <p class="v2-teachers-desc" data-i18n="teach-desc">Os professores da BBT são artistas que viveram o palco e escolheram transmitir. Cada um traz uma trajetória que inspira alunos a irem mais longe — dentro e fora da academia.</p>
+        <div class="v2-teachers-stat">
+          <div class="v2-avatars">
+            <div class="v2-av"></div>
+            <div class="v2-av"></div>
+            <div class="v2-av"></div>
+            <div class="v2-av v2-av-plus">+</div>
+          </div>
+          <div>
+            <span class="v2-big-num">38+</span>
+            <span class="v2-num-label" data-i18n="stat-3">professores especializados</span>
+          </div>
+        </div>
+      </div>
+      <div class="v2-teacher-img-wrap v2-ph">
+        <span class="v2-ph-label">Corpo docente · Mestra Helena · Método Vaganova</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================== CTA BANNER ===================== -->
+  <section class="v2-cta-banner" id="contato">
+    <div class="v2-cta-banner-inner">
+      <h2 class="v2-cta-banner-h2" data-i18n="cta-h2">Primeira aula<br>gratuita!</h2>
+      <div class="v2-cta-benefits">
+        <div class="v2-cta-benefit">
+          <div class="v2-cta-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
+          </div>
+          <span class="v2-cta-benefit-text" data-i18n="cta-b1">Conheça nossa estrutura na Av. Paulista</span>
+        </div>
+        <div class="v2-cta-benefit">
+          <div class="v2-cta-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+          </div>
+          <span class="v2-cta-benefit-text" data-i18n="cta-b2">Avalie aptidão e objetivos do aluno</span>
+        </div>
+        <div class="v2-cta-benefit">
+          <div class="v2-cta-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <span class="v2-cta-benefit-text" data-i18n="cta-b3">Conheça nossos professores especializados</span>
+        </div>
+        <div class="v2-cta-benefit">
+          <div class="v2-cta-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <span class="v2-cta-benefit-text" data-i18n="cta-b4">Para qualquer nível e faixa etária</span>
+        </div>
+      </div>
+      <form class="v2-cta-form" onsubmit="event.preventDefault()">
+        <input type="text" data-i18n-ph="ph-name" placeholder="Seu nome" />
+        <input type="tel" data-i18n-ph="ph-phone" placeholder="Telefone com DDD" />
+        <input type="email" data-i18n-ph="ph-email" placeholder="E-mail" />
+        <button type="submit" data-i18n="cta-btn">Agendar agora</button>
+      </form>
+      <p class="v2-cta-disclaimer" data-i18n="cta-disclaimer">Ao enviar você concorda com nossa política de privacidade · Sem compromisso · Vagas limitadas</p>
+    </div>
+  </section>
+
+  <!-- ===================== DIFFERENTIATORS ===================== -->
+  <section class="v2-diff">
+    <div class="v2-diff-inner">
+      <h2 class="v2-section-h2" data-i18n="diff-h2">O que nos diferencia<br><em>dos outros?</em></h2>
+      <div class="v2-diff-cards">
+        <div class="v2-diff-card">
+          <div class="v2-diff-avatar">✦</div>
+          <div class="v2-diff-tag" data-i18n="diff-tag-1">Formamos artistas</div>
+          <p data-i18n="diff-p-1">A técnica importa, mas o que nos move é o artista completo. Falamos com cada aluno sobre quem ele é, o que sente e quem pode se tornar — o palco é consequência disso.</p>
+        </div>
+        <div class="v2-diff-card">
+          <div class="v2-diff-avatar">◎</div>
+          <div class="v2-diff-tag" data-i18n="diff-tag-2">Cuidamos do ser humano</div>
+          <p data-i18n="diff-p-2">Não importa se é a primeira aula ou o nono ano. O que a criança ou adulto sente em cena é mais importante do que qualquer passo. Ensinamos a amar o processo.</p>
+        </div>
+        <div class="v2-diff-card">
+          <div class="v2-diff-avatar">⬟</div>
+          <div class="v2-diff-tag" data-i18n="diff-tag-3">Palco real, não ensaio</div>
+          <p data-i18n="diff-p-3">Nossos alunos sobem em palcos de verdade — Prix de Lausanne, Festival de Joinville, Youth America Grand Prix. Intercâmbios com escolas do mundo inteiro.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TESTIMONIAL CAROUSEL ===================== -->
+  <section class="v2-testimonial-quote" id="v2-tq-section">
+    <div class="v2-tq-heading">
+      <span class="eyebrow" data-i18n="testi-eyebrow">— Depoimentos</span>
+      <h2 class="v2-section-h2" data-i18n="testi-h2">Quem passou pela BBT,<br><em>não passou só.</em></h2>
+    </div>
+    <div class="v2-tq-carousel" id="v2-tq-carousel">
+
+      <!-- Slide 1 -->
+      <div class="v2-tq-slide active">
+        <div class="v2-tq-inner">
+          <div class="v2-tq-img-wrap v2-ph" style="background:radial-gradient(circle at 55% 30%,rgba(200,122,134,.28),transparent 60%),radial-gradient(circle at 20% 75%,rgba(168,88,104,.16),transparent 50%),var(--bg-elev);">
+            <span class="v2-ph-label">Alumni · BBT Art Academy · Stuttgart Ballet</span>
+          </div>
+          <div class="v2-tq-text">
+            <span class="v2-tq-quote-mark">"</span>
+            <blockquote class="v2-tq-blockquote">
+              A BBT me deu o palco antes do palco — disciplina, escuta e arte. Hoje sou primeira bailarina no Stuttgart Ballet e ainda volto para uma aula com Mestra Helena nas férias.
+            </blockquote>
+            <footer class="v2-tq-footer">
+              <strong>Mariana Avelar</strong>
+              <span>Primeira bailarina · Stuttgart Ballet · turma 2008</span>
+            </footer>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="v2-tq-slide">
+        <div class="v2-tq-inner">
+          <div class="v2-tq-img-wrap v2-ph" style="background:radial-gradient(circle at 55% 30%,rgba(168,88,104,.22),transparent 60%),radial-gradient(circle at 20% 75%,rgba(140,60,80,.14),transparent 50%),var(--bg-elev);">
+            <span class="v2-ph-label">Mãe da Luísa · Ballet Infantil · BBT Art Academy</span>
+          </div>
+          <div class="v2-tq-text">
+            <span class="v2-tq-quote-mark">"</span>
+            <blockquote class="v2-tq-blockquote">
+              Inscrevi minha filha aos 4 e em três anos ela é outra criança. O cuidado das professoras com cada gesto é raro — não encontrei em nenhum outro lugar.
+            </blockquote>
+            <footer class="v2-tq-footer">
+              <strong>Camila Souto</strong>
+              <span>Mãe da Luísa · Ballet Infantil · BBT Art Academy</span>
+            </footer>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="v2-tq-slide">
+        <div class="v2-tq-inner">
+          <div class="v2-tq-img-wrap v2-ph" style="background:radial-gradient(circle at 55% 30%,rgba(196,150,80,.22),transparent 60%),radial-gradient(circle at 20% 75%,rgba(180,130,60,.14),transparent 50%),var(--bg-elev);">
+            <span class="v2-ph-label">Diretora · Rainha Cinema Digital</span>
+          </div>
+          <div class="v2-tq-text">
+            <span class="v2-tq-quote-mark">"</span>
+            <blockquote class="v2-tq-blockquote">
+              A formação em interpretação para audiovisual mudou minha agência. Os alunos chegam prontos para set — presença, técnica e profissionalismo desde o primeiro dia.
+            </blockquote>
+            <footer class="v2-tq-footer">
+              <strong>Thais Laila</strong>
+              <span>Diretora · Rainha Cinema Digital</span>
+            </footer>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="v2-tq-slide">
+        <div class="v2-tq-inner">
+          <div class="v2-tq-img-wrap v2-ph" style="background:radial-gradient(circle at 55% 30%,rgba(100,120,180,.20),transparent 60%),radial-gradient(circle at 20% 75%,rgba(80,100,160,.12),transparent 50%),var(--bg-elev);">
+            <span class="v2-ph-label">Coreógrafo · Royal Opera House</span>
+          </div>
+          <div class="v2-tq-text">
+            <span class="v2-tq-quote-mark">"</span>
+            <blockquote class="v2-tq-blockquote">
+              É a escola mais séria que conheci no Brasil. Método, palco, festival, intercâmbio — tudo dentro da mesma casa. Resultado de meio século de dedicação.
+            </blockquote>
+            <footer class="v2-tq-footer">
+              <strong>Pedro Akamine</strong>
+              <span>Coreógrafo · Royal Opera House (convidado)</span>
+            </footer>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Navegação -->
+    <div class="v2-tq-controls">
+      <button class="v2-tq-btn" id="v2-tq-prev" aria-label="Anterior">←</button>
+      <div class="v2-tq-dots" id="v2-tq-dots"></div>
+      <button class="v2-tq-btn" id="v2-tq-next" aria-label="Próximo">→</button>
+    </div>
+  </section>
+
+  <!-- ===================== FINAL CTA ===================== -->
+  <section class="block final-cta" id="contato">
+    <div class="container">
+      <div class="final-cta-inner">
+        <span class="eyebrow" data-i18n="fcta-eyebrow">— Comece</span>
+        <h2 class="display-xl" data-i18n="fcta-h2">Agende uma<br><em>aula experimental.</em></h2>
+        <p class="lead" style="margin:24px auto 36px;text-align:center;" data-i18n="fcta-lead">
+          Sem compromisso. Em 50 minutos, você conhece a sala, o método e o(a) professor(a). Vagas limitadas para o semestre.
+        </p>
+        <div class="final-cta-btns">
+          <a href="agendar.html" class="btn btn-primary" data-i18n="fcta-btn1">Agendar agora <span class="arrow"></span></a>
+          <a href="https://wa.me/551132875050" class="btn btn-outline" data-i18n="fcta-btn2">Falar no WhatsApp</a>
+        </div>
+        <div class="final-cta-meta">
+          <span data-i18n="common-address">Av. Paulista, 1578 — Bela Vista, São Paulo</span>
+          <span class="dot-sep">·</span>
+          <span>+55 11 3287-5050</span>
+          <span class="dot-sep">·</span>
+          <span data-i18n="fcta-hours">Atendimento Seg—Sab, 8h—21h</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="brand-mark">B</div>
+        <h3 class="display-sm" style="color:var(--text);margin-bottom:10px;">BBT Art Academy</h3>
+        <p data-i18n="footer-brand-p">Cinquenta anos formando artistas e abrindo caminhos no palco do mundo.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></svg>
+          </a>
+          <a href="#" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.6 7.2c-.2-.9-.9-1.6-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4c-.9.2-1.6.9-1.8 1.8C2 8.8 2 12 2 12s0 3.2.4 4.8c.2.9.9 1.6 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4c.9-.2 1.6-.9 1.8-1.8.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8zM10 15.3v-6.6L15.7 12 10 15.3z"/></svg>
+          </a>
+          <a href="#" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.8a4.7 4.7 0 0 1-2.9-1.6V14.7a4.3 4.3 0 1 1-4.3-4.3v2.6a1.7 1.7 0 1 0 1.7 1.7V2h2.6a4.7 4.7 0 0 0 2.9 3.8z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer-nav-h">Navegar</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#academy">A Academia</a></li>
+          <li><a href="modalidade.html">Modalidades</a></li>
+          <li><a href="estrutura.html">Estrutura</a></li>
+          <li><a href="cinquenta-anos.html">50 Anos</a></li>
+          <li><a href="agendar.html">Agendar aula</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contato</h5>
+        <ul>
+          <li>Av. Paulista, 1578 — Bela Vista, São Paulo</li>
+          <li>+55 11 3287-5050</li>
+          <li>contato@bbtartacademy.com.br</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer-nl-h">Receba nossa programação</h5>
+        <form class="footer-form" onsubmit="event.preventDefault();this.reset();">
+          <input type="text" placeholder="Seu nome" />
+          <input type="tel" placeholder="Telefone com DDD" />
+          <input type="email" placeholder="seu e-mail" />
+          <button type="submit" data-i18n="footer-sub-btn">Inscrever-se →</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="footer-copy">© 2026 BBT Art Academy — Todos os direitos reservados</span>
+      <span>Bela Vista · São Paulo</span>
+    </div>
+  </footer>
+
+  <!-- Scroll dots -->
+  <div class="scroll-dots" id="v2-scroll-dots" aria-hidden="true"></div>
+
+  <!-- WhatsApp float -->
+  <a href="https://wa.me/551132875050" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M16 3C9.4 3 4 8.4 4 15c0 2.4.7 4.6 1.8 6.5L4 29l7.7-2c1.8 1 3.9 1.6 6.3 1.6 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 22c-2 0-3.9-.5-5.5-1.5l-.4-.2-4.6 1.2 1.2-4.5-.3-.4C5.5 18.9 5 17 5 15c0-6 5-11 11-11s11 5 11 11-5 10-11 10zm5.7-7.4c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.1-.2.3-.8 1-1 1.2-.2.2-.3.2-.7.1-.3-.2-1.4-.5-2.6-1.6-.9-.8-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .2.2 2 3 4.9 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.3.2-1.5-.1-.2-.3-.3-.6-.4z"/>
+    </svg>
+  </a>
+
+  <script>
+    // ============================================================
+    // i18n — traduções PT / EN
+    // ============================================================
+    var I18N = {
+      pt: {
+        'nav-academia':'A Academia','nav-modalidades':'Modalidades','nav-estrutura':'Estrutura',
+        'nav-internacional':'Internacional','nav-50anos':'50 Anos','nav-contato':'Contato','nav-cta':'Agendar aula',
+        'hero-eyebrow':'Desde 1975','hero-h1':'50 anos formando<br><em>talentos</em><br>no ballet.',
+        'hero-b1':'Formação artística completa com 12 modalidades','hero-b2':'Método Vaganova com professores especializados',
+        'hero-b3':'Palco internacional e festivais reconhecidos','hero-b4':'Aulas para crianças, adolescentes e adultos',
+        'hero-form-label':'Primeira aula gratuita!','hero-btn':'Agendar',
+        'hero-disclaimer':'Ao enviar você concorda com nossa política de privacidade',
+        'ph-name':'Seu nome','ph-phone':'Telefone com DDD','ph-email':'E-mail',
+        'marquee-eyebrow':'— Festivais &amp; instituições parceiras',
+        'stat-1':'anos de excelência','stat-2':'alunos formados','stat-3':'professores especializados','stat-4':'modalidades',
+        'proof-eyebrow':'— Reconhecimento','proof-title':'Palco internacional,<br><em>raízes brasileiras.</em>',
+        'proof-cat-1':'Concurso internacional · Suíça','proof-cat-2':'Concurso internacional · EUA',
+        'proof-cat-3':'Festival nacional · Brasil','proof-cat-4':'Certificação metodológica · Reino Unido',
+        'proof-cat-5':'Programa de intercâmbio · Rússia','proof-cat-6':'Reconhecimento editorial · EUA',
+        'proof-meta-1':'Finalistas · 2019 / 2022 / 2024','proof-meta-2':'Top 12 · Nova York',
+        'proof-meta-3':'Medalhas de ouro','proof-meta-4':'Currículo certificado',
+        'proof-meta-5':'Mestre convidado anual','proof-meta-6':'Editorial 2023',
+        'prog-h2':'Para cada fase<br><em>da sua vida</em>',
+        'prog-sub':'A BBT atende alunos de 4 anos até adultos — cada programa pensado para a faixa etária, o nível técnico e os objetivos de cada aluno. Doze caminhos para um mesmo palco.',
+        'tab-infantil':'Ballet Infantil','tab-classico':'Ballet Clássico','tab-adulto':'Adultos',
+        'tab-jazz':'Jazz','tab-cenico':'Teatro Musical','tab-audiovisual':'Audiovisual',
+        'tab-marcial':'Artes Marciais','tab-hiphop':'Hip Hop','tab-ritmica':'Ginástica Rítmica',
+        'tab-contemp':'Dança Contemporânea','tab-forro':'Forró Cabrueira','tab-canto':'Canto Adulto',
+        't-who':'Para quem é?','t-what':'O que o aluno desenvolve?','in-what':'O que a criança desenvolve?',
+        't-kta':'Kids / Teens / Adultos','t-adults':'Adultos','t-cta1':'Agendar aula experimental','t-cta2':'Saiba mais',
+        'in-badge':'4 — 9 anos','in-h3':'Ballet Infantil',
+        'in-p':'Programa ideal para crianças a partir de 4 anos que desejam iniciar na dança com uma metodologia lúdica e acolhedora, que respeita o desenvolvimento natural de cada criança.',
+        'in-l1':'Coordenação motora e ritmo musical','in-l2':'Postura e consciência corporal desde cedo',
+        'in-l3':'Concentração e disciplina de forma natural','in-l4':'Sociabilização, amizades e trabalho em grupo','in-l5':'Amor pela arte e expressão criativa',
+        'cl-badge':'A partir de 10 anos','cl-h3':'Ballet Clássico',
+        'cl-p':'Formação técnica completa pelo método russo Vaganova para alunos a partir de 10 anos, com vagas para iniciantes e avançados. A base para quem sonha com uma carreira profissional no ballet.',
+        'cl-l1':'Técnica clássica com o rigoroso Método Vaganova','cl-l2':'Preparação para competições nacionais e internacionais',
+        'cl-l3':'Apresentações em palco profissional','cl-l4':'Intercâmbios com o Bolshoi, Stuttgart e Royal Ballet','cl-l5':'Base sólida para carreira artística profissional',
+        'ad-badge':'Adultos — Todos os níveis','ad-h3':'Ballet para Adultos',
+        'ad-p':'Para quem sempre quis dançar, quer voltar ao ballet ou busca saúde, postura e bem-estar através da dança. Aulas adaptadas ao corpo adulto, sem restrição de nível.',
+        'ad-l1':'Técnica clássica adaptada ao corpo adulto','ad-l2':'Postura, elegância e consciência corporal',
+        'ad-l3':'Flexibilidade, força e condicionamento físico','ad-l4':'Bem-estar, qualidade de vida e autoconhecimento','ad-l5':'Realização pessoal e expressão artística',
+        'jz-p':'Para quem quer dançar com energia, técnica e musicalidade. O jazz da BBT é ministrado para todas as faixas etárias, combinando técnica de dança com expressão e performance.',
+        'jz-l1':'Técnica de jazz com base em dança contemporânea','jz-l2':'Musicalidade, ritmo e interpretação',
+        'jz-l3':'Isolamentos, kicks e turns','jz-l4':'Expressão cênica e performance','jz-l5':'Preparação para apresentações e festivais',
+        'tm-h3':'Teatro Musical',
+        'tm-p':'Para quem quer dominar as três linguagens do palco ao mesmo tempo: dança, canto e interpretação. O programa prepara o aluno para produções completas de teatro musical.',
+        'tm-l1':'Dança cênica e movimento teatral','tm-l2':'Técnica vocal aplicada ao teatro musical',
+        'tm-l3':'Interpretação e construção de personagem','tm-l4':'Presença de palco e carisma','tm-l5':'Participação em produções e espetáculos',
+        'av-badge':'Teens e Adultos','av-h3':'Interpretação para Audiovisual',
+        'av-p':'Para quem quer atuar em TV, cinema, streaming e novela vertical. O programa forma atores prontos para o set, com técnica específica para câmera e linguagem audiovisual.',
+        'av-l1':'Interpretação para câmera — TV, cinema e streaming','av-l2':'Técnica para novela vertical (redes sociais)',
+        'av-l3':'Consciência corporal e expressão facial','av-l4':'Construção de personagem para audiovisual','av-l5':'Preparação para audições e testes',
+        'ma-badge':'Crianças e Adultos','ma-h3':'Artes Marciais',
+        'ma-p':'A BBT oferece judô com Maicon França e jiu-jitsu na linhagem Carlson Gracie — modalidades que desenvolvem disciplina, respeito, autoconfiança e condicionamento físico em todas as idades.',
+        'ma-l1':'Judô com Maicon França — professor especializado','ma-l2':'Jiu-Jitsu — Linhagem Carlson Gracie',
+        'ma-l3':'Disciplina, respeito e ética marcial','ma-l4':'Autodefesa e autoconfiança real','ma-l5':'Condicionamento físico e equilíbrio mental',
+        'hh-p':'Para quem quer explorar a cultura urbana com técnica e autenticidade. Ministrado por Toninho Fontes, referência nacional no estilo, com turmas para todas as idades.',
+        'hh-l1':'Técnica de hip hop com Toninho Fontes','hh-l2':'Cultura urbana e identidade artística',
+        'hh-l3':'Ritmo, groove e improvisação','hh-l4':'Expressão corporal e criatividade','hh-l5':'Confiança e presença de palco',
+        'gr-badge':'A partir de 4 anos','gr-h3':'Ginástica Rítmica',
+        'gr-p':'Programa de alto rendimento em parceria com a CET Gym, para crianças e adolescentes que buscam desenvolvimento técnico e competitivo na ginástica rítmica.',
+        'gr-l1':'Técnica de GR com foco em alto rendimento','gr-l2':'Flexibilidade, equilíbrio e coordenação',
+        'gr-l3':'Manejo de aparelhos (fita, bola, arco, maças)','gr-l4':'Preparação para competições','gr-l5':'Postura e elegância corporal',
+        'dc-badge':'Teens e Adultos','dc-h3':'Dança Contemporânea',
+        'dc-p':'Para quem quer ir além das técnicas tradicionais e explorar o movimento como linguagem artística — pesquisa corporal, improvisação e construção de identidade cênica.',
+        'dc-l1':'Pesquisa corporal e identidade artística','dc-l2':'Improvisação e composição coreográfica',
+        'dc-l3':'Consciência do movimento no espaço','dc-l4':'Expressão autoral e criatividade','dc-l5':'Diálogo entre técnica e liberdade',
+        'fc-h3':'Forró Cabrueira',
+        'fc-p':'Para adultos que querem aprender o forró como dança social brasileira de verdade — com técnica, musicalidade e aquele espírito do forró autêntico que aproxima as pessoas.',
+        'fc-l1':'Técnica de forró — passos, condução e seguida','fc-l2':'Conexão, ritmo e comunicação a dois',
+        'fc-l3':'Musicalidade e interpretação dos ritmos nordestinos','fc-l4':'Convívio social e cultura brasileira','fc-l5':'Confiança para dançar em qualquer ambiente',
+        'ca-badge':'Adultos — Todos os níveis','ca-h3':'Canto Adulto',
+        'ca-p':'Para adultos que sempre quiseram cantar — seja para desenvolver a voz, superar o medo de cantar em público ou explorar o canto como expressão artística e bem-estar.',
+        'ca-l1':'Técnica vocal — respiração, apoio e projeção','ca-l2':'Afinação, dicção e expressão interpretativa',
+        'ca-l3':'Repertório variado — MPB, pop, lírica e musical','ca-l4':'Presença vocal e confiança para cantar','ca-l5':'Saúde e bem-estar através da voz',
+        'video-eyebrow':'— Vídeo institucional','video-h2':'Conheça a BBT<br><em>em 5 minutos</em>','video-btn':'Assistir',
+        'teach-eyebrow':'— Corpo docente','teach-h2':'Mestre, guia<br><em>e referência</em>',
+        'teach-desc':'Os professores da BBT são artistas que viveram o palco e escolheram transmitir. Cada um traz uma trajetória que inspira alunos a irem mais longe — dentro e fora da academia.',
+        'cta-h2':'Primeira aula<br>gratuita!',
+        'cta-b1':'Conheça nossa estrutura na Av. Paulista','cta-b2':'Avalie aptidão e objetivos do aluno',
+        'cta-b3':'Conheça nossos professores especializados','cta-b4':'Para qualquer nível e faixa etária',
+        'cta-btn':'Agendar agora','cta-disclaimer':'Ao enviar você concorda com nossa política de privacidade · Sem compromisso · Vagas limitadas',
+        'diff-h2':'O que nos diferencia<br><em>dos outros?</em>',
+        'diff-tag-1':'Formamos artistas','diff-p-1':'A técnica importa, mas o que nos move é o artista completo. Falamos com cada aluno sobre quem ele é, o que sente e quem pode se tornar — o palco é consequência disso.',
+        'diff-tag-2':'Cuidamos do ser humano','diff-p-2':'Não importa se é a primeira aula ou o nono ano. O que a criança ou adulto sente em cena é mais importante do que qualquer passo. Ensinamos a amar o processo.',
+        'diff-tag-3':'Palco real, não ensaio','diff-p-3':'Nossos alunos sobem em palcos de verdade — Prix de Lausanne, Festival de Joinville, Youth America Grand Prix. Intercâmbios com escolas do mundo inteiro.',
+        'testi-eyebrow':'— Depoimentos','testi-h2':'Quem passou pela BBT,<br><em>não passou só.</em>',
+        'venue-eyebrow':'— Nova sede','venue-h2':'Uma estrutura<br><em>à altura da nossa história.</em>',
+        'venue-lead':'Em 2024, a BBT abriu as portas de sua nova sede na Av. Paulista — 1.800 m² desenhados ao redor da dança, com seis salas, auditório, café e um lounge para familiares.',
+        'venue-t1':'Salas amplas','venue-d1':'Pé-direito alto, barras profissionais e ventilação cruzada.',
+        'venue-t2':'Piso profissional','venue-d2':'Tablado de balé com camadas de absorção, instalado pela Harlequin Floors.',
+        'venue-t3':'Localização premium','venue-d3':'Av. Paulista, 1578 — esquina com a Rua Augusta, em frente ao MASP.',
+        'venue-t4':'Apoio à família','venue-d4':'Sala de espera, café e vestiários renovados.',
+        'venue-btn':'Conhecer estrutura <span class="arrow"></span>',
+        'fcta-eyebrow':'— Comece','fcta-h2':'Agende uma<br><em>aula experimental.</em>',
+        'fcta-lead':'Sem compromisso. Em 50 minutos, você conhece a sala, o método e o(a) professor(a). Vagas limitadas para o semestre.',
+        'fcta-btn1':'Agendar agora <span class="arrow"></span>','fcta-btn2':'Falar no WhatsApp',
+        'common-address':'Av. Paulista, 1578 — Bela Vista, São Paulo','fcta-hours':'Atendimento Seg—Sab, 8h—21h',
+        'footer-brand-p':'Cinquenta anos formando artistas e abrindo caminhos no palco do mundo.',
+        'footer-nav-h':'Navegar','footer-nl-h':'Receba nossa programação','footer-sub-btn':'Inscrever-se →',
+        'footer-copy':'© 2026 BBT Art Academy — Todos os direitos reservados',
+      },
+      en: {
+        'nav-academia':'The Academy','nav-modalidades':'Programs','nav-estrutura':'Facilities',
+        'nav-internacional':'International','nav-50anos':'50 Years','nav-contato':'Contact','nav-cta':'Book a class',
+        'hero-eyebrow':'Since 1975','hero-h1':'50 years shaping<br><em>talent</em><br>in ballet.',
+        'hero-b1':'Complete artistic training across 12 programs','hero-b2':'Vaganova method with specialist teachers',
+        'hero-b3':'International stage and acclaimed festivals','hero-b4':'Classes for children, teens and adults',
+        'hero-form-label':'First class free!','hero-btn':'Book',
+        'hero-disclaimer':'By submitting you agree to our privacy policy',
+        'ph-name':'Your name','ph-phone':'Phone number','ph-email':'E-mail',
+        'marquee-eyebrow':'— Partner festivals &amp; institutions',
+        'stat-1':'years of excellence','stat-2':'graduates','stat-3':'specialist teachers','stat-4':'programs',
+        'proof-eyebrow':'— Recognition','proof-title':'An international stage,<br><em>rooted in Brazil.</em>',
+        'proof-cat-1':'International competition · Switzerland','proof-cat-2':'International competition · USA',
+        'proof-cat-3':'National festival · Brazil','proof-cat-4':'Method certification · UK',
+        'proof-cat-5':'Exchange program · Russia','proof-cat-6':'Editorial feature · USA',
+        'proof-meta-1':'Finalists · 2019 / 2022 / 2024','proof-meta-2':'Top 12 · New York',
+        'proof-meta-3':'Gold awards','proof-meta-4':'Certified syllabus',
+        'proof-meta-5':'Annual guest master','proof-meta-6':'2023 feature',
+        'prog-h2':'For every stage<br><em>of your life</em>',
+        'prog-sub':'BBT welcomes students from age 4 to adults — each program tailored to the age group, technical level and goals of every student. Twelve paths to the same stage.',
+        'tab-infantil':'Children\'s Ballet','tab-classico':'Classical Ballet','tab-adulto':'Adults',
+        'tab-jazz':'Jazz','tab-cenico':'Musical Theatre','tab-audiovisual':'Screen Acting',
+        'tab-marcial':'Martial Arts','tab-hiphop':'Hip Hop','tab-ritmica':'Rhythmic Gymnastics',
+        'tab-contemp':'Contemporary Dance','tab-forro':'Forró Cabrueira','tab-canto':'Adult Voice',
+        't-who':'For whom?','t-what':'What does the student develop?','in-what':'What does the child develop?',
+        't-kta':'Kids / Teens / Adults','t-adults':'Adults','t-cta1':'Book a trial class','t-cta2':'Learn more',
+        'in-badge':'Ages 4 — 9','in-h3':'Children\'s Ballet',
+        'in-p':'The ideal program for children from age 4 who want to start dancing with a playful and welcoming methodology that respects each child\'s natural development.',
+        'in-l1':'Motor coordination and musical rhythm','in-l2':'Posture and body awareness from an early age',
+        'in-l3':'Concentration and discipline in a natural way','in-l4':'Socialisation, friendships and teamwork','in-l5':'Love for art and creative expression',
+        'cl-badge':'From age 10','cl-h3':'Classical Ballet',
+        'cl-p':'Complete technical training using the Russian Vaganova method for students from age 10, with places for beginners and advanced. The foundation for those who dream of a professional ballet career.',
+        'cl-l1':'Classical technique with the rigorous Vaganova Method','cl-l2':'Preparation for national and international competitions',
+        'cl-l3':'Performances on a professional stage','cl-l4':'Exchanges with the Bolshoi, Stuttgart and Royal Ballet','cl-l5':'Solid foundation for a professional artistic career',
+        'ad-badge':'Adults — All levels','ad-h3':'Adult Ballet',
+        'ad-p':'For those who always wanted to dance, want to return to ballet, or seek health, posture and well-being through dance. Classes adapted for the adult body, no level restriction.',
+        'ad-l1':'Classical technique adapted for the adult body','ad-l2':'Posture, elegance and body awareness',
+        'ad-l3':'Flexibility, strength and physical conditioning','ad-l4':'Well-being, quality of life and self-knowledge','ad-l5':'Personal fulfilment and artistic expression',
+        'jz-p':'For those who want to dance with energy, technique and musicality. BBT Jazz is taught across all age groups, combining dance technique with expression and performance.',
+        'jz-l1':'Jazz technique grounded in contemporary dance','jz-l2':'Musicality, rhythm and interpretation',
+        'jz-l3':'Isolations, kicks and turns','jz-l4':'Scenic expression and performance','jz-l5':'Preparation for shows and festivals',
+        'tm-h3':'Musical Theatre',
+        'tm-p':'For those who want to master all three languages of the stage at once: dance, singing and acting. The program prepares students for complete musical theatre productions.',
+        'tm-l1':'Stage dance and theatrical movement','tm-l2':'Vocal technique applied to musical theatre',
+        'tm-l3':'Acting and character building','tm-l4':'Stage presence and charisma','tm-l5':'Participation in productions and shows',
+        'av-badge':'Teens and Adults','av-h3':'Screen Acting',
+        'av-p':'For those who want to act in TV, film, streaming and vertical drama. The program trains actors ready for set, with specific technique for camera and audiovisual language.',
+        'av-l1':'Acting for camera — TV, film and streaming','av-l2':'Technique for vertical drama (social media)',
+        'av-l3':'Body awareness and facial expression','av-l4':'Character building for screen','av-l5':'Preparation for auditions and screen tests',
+        'ma-badge':'Children and Adults','ma-h3':'Martial Arts',
+        'ma-p':'BBT offers judo with Maicon França and jiu-jitsu in the Carlson Gracie lineage — disciplines that build discipline, respect, self-confidence and physical conditioning at all ages.',
+        'ma-l1':'Judo with Maicon França — specialist teacher','ma-l2':'Jiu-Jitsu — Carlson Gracie lineage',
+        'ma-l3':'Discipline, respect and martial ethics','ma-l4':'Self-defence and real self-confidence','ma-l5':'Physical conditioning and mental balance',
+        'hh-p':'For those who want to explore urban culture with technique and authenticity. Taught by Toninho Fontes, a national reference in the style, with classes for all ages.',
+        'hh-l1':'Hip hop technique with Toninho Fontes','hh-l2':'Urban culture and artistic identity',
+        'hh-l3':'Rhythm, groove and improvisation','hh-l4':'Body expression and creativity','hh-l5':'Confidence and stage presence',
+        'gr-badge':'From age 4','gr-h3':'Rhythmic Gymnastics',
+        'gr-p':'A high-performance program in partnership with CET Gym, for children and teenagers seeking technical and competitive development in rhythmic gymnastics.',
+        'gr-l1':'RG technique focused on high performance','gr-l2':'Flexibility, balance and coordination',
+        'gr-l3':'Apparatus handling (ribbon, ball, hoop, clubs)','gr-l4':'Competition preparation','gr-l5':'Posture and body elegance',
+        'dc-badge':'Teens and Adults','dc-h3':'Contemporary Dance',
+        'dc-p':'For those who want to go beyond traditional techniques and explore movement as an artistic language — body research, improvisation and building scenic identity.',
+        'dc-l1':'Body research and artistic identity','dc-l2':'Improvisation and choreographic composition',
+        'dc-l3':'Spatial movement awareness','dc-l4':'Authorial expression and creativity','dc-l5':'Dialogue between technique and freedom',
+        'fc-h3':'Forró Cabrueira',
+        'fc-p':'For adults who want to learn forró as a genuine Brazilian social dance — with technique, musicality and that authentic forró spirit that brings people together.',
+        'fc-l1':'Forró technique — steps, leading and following','fc-l2':'Connection, rhythm and partner communication',
+        'fc-l3':'Musicality and interpretation of northeastern rhythms','fc-l4':'Social life and Brazilian culture','fc-l5':'Confidence to dance in any setting',
+        'ca-badge':'Adults — All levels','ca-h3':'Adult Voice',
+        'ca-p':'For adults who always wanted to sing — whether to develop the voice, overcome stage fright or explore singing as artistic expression and well-being.',
+        'ca-l1':'Vocal technique — breathing, support and projection','ca-l2':'Pitch, diction and expressive interpretation',
+        'ca-l3':'Varied repertoire — MPB, pop, classical and musical','ca-l4':'Vocal presence and confidence to sing','ca-l5':'Health and well-being through the voice',
+        'video-eyebrow':'— Institutional film','video-h2':'Meet BBT<br><em>in 5 minutes</em>','video-btn':'Watch',
+        'teach-eyebrow':'— Faculty','teach-h2':'Master, guide<br><em>and role model</em>',
+        'teach-desc':'BBT\'s teachers are artists who lived the stage and chose to pass it on. Each brings a trajectory that inspires students to go further — inside and beyond the academy.',
+        'cta-h2':'First class<br>free!',
+        'cta-b1':'Tour our facilities on Av. Paulista','cta-b2':'Assess the student\'s aptitude and goals',
+        'cta-b3':'Meet our specialist teachers','cta-b4':'For any level and age group',
+        'cta-btn':'Book now','cta-disclaimer':'By submitting you agree to our privacy policy · No commitment · Limited spots',
+        'diff-h2':'What sets us apart<br><em>from others?</em>',
+        'diff-tag-1':'We shape artists','diff-p-1':'Technique matters, but what drives us is the complete artist. We talk with each student about who they are, what they feel and who they can become — the stage follows.',
+        'diff-tag-2':'We care about the person','diff-p-2':'Whether it\'s the first lesson or the ninth year, what the child or adult feels on stage matters more than any step. We teach people to love the process.',
+        'diff-tag-3':'Real stage, not rehearsal','diff-p-3':'Our students perform on real stages — Prix de Lausanne, Festival de Joinville, Youth America Grand Prix. Exchanges with schools around the world.',
+        'testi-eyebrow':'— Testimonials','testi-h2':'Those who came through BBT<br><em>never came alone.</em>',
+        'venue-eyebrow':'— New venue','venue-h2':'A space<br><em>worthy of our history.</em>',
+        'venue-lead':'In 2024, BBT opened its new home on Av. Paulista — 1,800 m² designed around dance, with six studios, an auditorium, café and a family lounge.',
+        'venue-t1':'Spacious studios','venue-d1':'High ceilings, professional barres and cross ventilation.',
+        'venue-t2':'Sprung dance floor','venue-d2':'Multilayer shock-absorbent flooring by Harlequin Floors.',
+        'venue-t3':'Premium location','venue-d3':'Av. Paulista, 1578 — corner of Rua Augusta, facing MASP.',
+        'venue-t4':'Family lounge','venue-d4':'Waiting area, café and refurbished dressing rooms.',
+        'venue-btn':'Tour the facility <span class="arrow"></span>',
+        'fcta-eyebrow':'— Begin','fcta-h2':'Book a <em>trial</em><br><em>class.</em>',
+        'fcta-lead':'No commitment. In 50 minutes, you meet the studio, the method and the teacher. Limited spots this term.',
+        'fcta-btn1':'Book now <span class="arrow"></span>','fcta-btn2':'Chat on WhatsApp',
+        'common-address':'Av. Paulista, 1578 — Bela Vista, São Paulo','fcta-hours':'Mon—Sat, 8am—9pm',
+        'footer-brand-p':'Fifty years shaping artists and opening paths to the world stage.',
+        'footer-nav-h':'Navigate','footer-nl-h':'Get our schedule','footer-sub-btn':'Subscribe →',
+        'footer-copy':'© 2026 BBT Art Academy — All rights reserved',
+      }
+    };
+
+    var currentLang = localStorage.getItem('bbt-lang') || 'pt';
+
+    function applyLang(lang) {
+      currentLang = lang;
+      localStorage.setItem('bbt-lang', lang);
+      var dict = I18N[lang];
+      document.querySelectorAll('[data-i18n]').forEach(function(el) {
+        var key = el.dataset.i18n;
+        if (dict[key] !== undefined) el.innerHTML = dict[key];
+      });
+      document.querySelectorAll('[data-i18n-ph]').forEach(function(el) {
+        var key = el.dataset.i18nPh;
+        if (dict[key] !== undefined) el.placeholder = dict[key];
+      });
+      document.querySelectorAll('#v2-lang-toggle button').forEach(function(btn) {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+      document.documentElement.lang = lang === 'en' ? 'en' : 'pt-BR';
+    }
+
+    // Wire lang buttons
+    document.getElementById('v2-lang-toggle').addEventListener('click', function(e) {
+      var btn = e.target.closest('button[data-lang]');
+      if (btn) applyLang(btn.dataset.lang);
+    });
+
+    // Apply on load
+    applyLang(currentLang);
+
+    // ============================================================
+    // Scroll dots
+    // ============================================================
+    var dotSections = ['hero', 'reconhecimento', 'modalidades', 'internacional', 'contato'];
+    var dotsEl = document.getElementById('v2-scroll-dots');
+    dotSections.forEach(function(id, i) {
+      var d = document.createElement('div');
+      d.className = 'dot' + (i === 0 ? ' active' : '');
+      d.setAttribute('data-dot', id);
+      dotsEl.appendChild(d);
+    });
+
+    function updateDots() {
+      var mid = window.scrollY + window.innerHeight * 0.42;
+      var best = 0, bestDist = Infinity;
+      dotSections.forEach(function(id, i) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        var top = el.offsetTop;
+        var dist = Math.abs(top - mid);
+        if (top <= mid && dist < bestDist) { best = i; bestDist = dist; }
+      });
+      dotsEl.querySelectorAll('.dot').forEach(function(d, i) {
+        d.classList.toggle('active', i === best);
+      });
+    }
+    window.addEventListener('scroll', updateDots, { passive: true });
+    updateDots();
+
+    // ============================================================
+    // Tab switching
+    // ============================================================
+    document.querySelectorAll('.v2-tab').forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        var id = this.dataset.tab;
+        document.querySelectorAll('.v2-tab').forEach(function(t) { t.classList.remove('active'); });
+        document.querySelectorAll('.v2-tab-pane').forEach(function(p) { p.classList.remove('active'); });
+        this.classList.add('active');
+        var pane = document.getElementById('tab-' + id);
+        if (pane) pane.classList.add('active');
+      });
+    });
+
+    // ============================================================
+    // Header scroll
+    // ============================================================
+    var header = document.getElementById('v2-header');
+    window.addEventListener('scroll', function() {
+      header.classList.toggle('scrolled', window.scrollY > 30);
+    }, { passive: true });
+
+    // ============================================================
+    // Video click
+    // ============================================================
+    document.getElementById('v2-video-frame').addEventListener('click', function() {
+      var btn = document.getElementById('v2-video-btn');
+      if (btn) btn.style.display = 'none';
+    });
+
+    // ============================================================
+    // Scroll reveal
+    // ============================================================
+    var ioReveal = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0)';
+          ioReveal.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll(
+      '.proof-card, .v2-method-card, .v2-diff-card, .v2-testi-card, .v2-stat, .v2-beyond-list li'
+    ).forEach(function(el) {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+      ioReveal.observe(el);
+    });
+  </script>
+  <script>
+    // ============================================================
+    // Testimonial carousel
+    // ============================================================
+    (function() {
+      var slides = document.querySelectorAll('#v2-tq-carousel .v2-tq-slide');
+      var dotsEl = document.getElementById('v2-tq-dots');
+      var current = 0;
+      var timer = null;
+      var total = slides.length;
+
+      // Build dots
+      slides.forEach(function(_, i) {
+        var d = document.createElement('button');
+        d.className = 'v2-tq-dot' + (i === 0 ? ' active' : '');
+        d.setAttribute('aria-label', 'Depoimento ' + (i + 1));
+        d.addEventListener('click', function() { goTo(i); resetTimer(); });
+        dotsEl.appendChild(d);
+      });
+
+      function updateDots(idx) {
+        dotsEl.querySelectorAll('.v2-tq-dot').forEach(function(d, i) {
+          d.classList.toggle('active', i === idx);
+        });
+      }
+
+      function goTo(next) {
+        if (next === current) return;
+        var cur = slides[current];
+        var nxt = slides[next];
+        cur.classList.add('leaving');
+        cur.classList.remove('active');
+        setTimeout(function() { cur.classList.remove('leaving'); }, 750);
+        nxt.classList.add('active');
+        current = next;
+        updateDots(current);
+      }
+
+      function nextSlide() { goTo((current + 1) % total); }
+      function prevSlide() { goTo((current - 1 + total) % total); }
+
+      function resetTimer() {
+        clearInterval(timer);
+        timer = setInterval(nextSlide, 6000);
+      }
+
+      document.getElementById('v2-tq-next').addEventListener('click', function() { nextSlide(); resetTimer(); });
+      document.getElementById('v2-tq-prev').addEventListener('click', function() { prevSlide(); resetTimer(); });
+
+      // Pause on hover
+      var section = document.getElementById('v2-tq-section');
+      section.addEventListener('mouseenter', function() { clearInterval(timer); });
+      section.addEventListener('mouseleave', resetTimer);
+
+      resetTimer();
+    })();
+
+    // ============================================================
+    // Proof cards — 3D perspective tilt + shine
+    // ============================================================
+    document.querySelectorAll('#reconhecimento .proof-card').forEach(function(card) {
+      card.addEventListener('mouseenter', function() {
+        this.style.transition = 'box-shadow 0.45s ease, border-color 0.45s ease, transform 0.12s ease';
+      });
+
+      card.addEventListener('mousemove', function(e) {
+        var rect = this.getBoundingClientRect();
+        // normalized -1 → +1
+        var dx = (e.clientX - (rect.left + rect.width  / 2)) / (rect.width  / 2);
+        var dy = (e.clientY - (rect.top  + rect.height / 2)) / (rect.height / 2);
+
+        var rotY =  dx * 11;   // tilt horizontal (max ±11°)
+        var rotX = -dy * 8;    // tilt vertical   (max ±8°)
+
+        this.style.transform =
+          'perspective(900px) rotateX(' + rotX.toFixed(2) + 'deg) rotateY(' + rotY.toFixed(2) + 'deg) scale3d(1.025, 1.025, 1.025)';
+
+        // shine follows cursor
+        var mx = (((e.clientX - rect.left) / rect.width)  * 100).toFixed(1);
+        var my = (((e.clientY - rect.top)  / rect.height) * 100).toFixed(1);
+        this.style.setProperty('--mx', mx + '%');
+        this.style.setProperty('--my', my + '%');
+      });
+
+      card.addEventListener('mouseleave', function() {
+        this.style.transition = 'box-shadow 0.45s ease, border-color 0.45s ease, transform 0.55s ease';
+        this.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg) scale3d(1,1,1)';
+      });
+    });
+  </script>
+</body>
+</html>

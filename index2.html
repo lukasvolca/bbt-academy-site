@@ -70,14 +70,14 @@
           <li data-i18n="hero-b3">Palco internacional e festivais reconhecidos</li>
           <li data-i18n="hero-b4">Aulas para crianças, adolescentes e adultos</li>
         </ul>
-        <div class="v2-hero-form-label" data-i18n="hero-form-label">Primeira aula gratuita!</div>
-        <form class="v2-hero-form" onsubmit="event.preventDefault()">
+        <div class="v2-hero-form-label v2-desktop-only" data-i18n="hero-form-label">Primeira aula gratuita!</div>
+        <form class="v2-hero-form v2-desktop-only" onsubmit="event.preventDefault()">
           <input type="text" data-i18n-ph="ph-name" placeholder="Seu nome" />
           <input type="tel" data-i18n-ph="ph-phone" placeholder="Telefone com DDD" />
           <input type="email" data-i18n-ph="ph-email" placeholder="E-mail" />
           <button type="submit" data-i18n="hero-btn">Agendar</button>
         </form>
-        <p class="v2-hero-disclaimer" data-i18n="hero-disclaimer">Ao enviar você concorda com nossa política de privacidade</p>
+        <p class="v2-hero-disclaimer v2-desktop-only" data-i18n="hero-disclaimer">Ao enviar você concorda com nossa política de privacidade</p>
       </div>
       <!-- Imagem / Dancer Scene -->
       <div class="v2-hero-image">
@@ -116,16 +116,8 @@
             <div class="v2-dancer-glow"></div>
           </div>
 
-          <!-- Card baixo-esquerda -->
-          <div class="v2-fc v2-fc-bl">
-            <span class="v2-fc-icon">👶</span>
-            <div>
-              <strong>Para todas as idades</strong>
-              <span>De 4 anos até adultos</span>
-            </div>
-          </div>
-          <!-- Card baixo-direita -->
-          <div class="v2-fc v2-fc-br">
+          <!-- Card baixo-centro -->
+          <div class="v2-fc v2-fc-bc">
             <span class="v2-fc-icon">🌍</span>
             <div>
               <strong>Palco internacional</strong>
@@ -136,6 +128,18 @@
       </div>
     </div>
   </section>
+
+  <!-- ===================== HERO FORM MOBILE ===================== -->
+  <div class="v2-hero-form-mobile v2-mobile-only">
+    <div class="v2-hero-form-label" data-i18n="hero-form-label">Primeira aula gratuita!</div>
+    <form class="v2-hero-form" onsubmit="event.preventDefault()">
+      <input type="text" data-i18n-ph="ph-name" placeholder="Seu nome" />
+      <input type="tel" data-i18n-ph="ph-phone" placeholder="Telefone com DDD" />
+      <input type="email" data-i18n-ph="ph-email" placeholder="E-mail" />
+      <button type="submit" data-i18n="hero-btn">Agendar</button>
+    </form>
+    <p class="v2-hero-disclaimer" data-i18n="hero-disclaimer">Ao enviar você concorda com nossa política de privacidade</p>
+  </div>
 
   <!-- ===================== MARQUEE ===================== -->
   <div class="marquee festivals-marquee">

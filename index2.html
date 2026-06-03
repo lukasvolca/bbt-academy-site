@@ -36,17 +36,34 @@
         <span class="sep">/</span>
         <button data-lang="en">EN</button>
       </div>
-      <a href="agendar.html" class="v2-nav-cta" data-i18n="nav-cta">Agendar aula</a>
+      <a href="agendar.html" class="v2-nav-cta v2-desktop-cta" data-i18n="nav-cta">Agendar aula</a>
+      <button class="v2-hamburger" id="v2-hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
+
+  <!-- ===================== MOBILE NAV ===================== -->
+  <div class="v2-mobile-nav" id="v2-mobile-nav" aria-hidden="true">
+    <nav class="v2-mobile-nav-links">
+      <a href="#academia" data-i18n="nav-academia">A Academia</a>
+      <a href="#reconhecimento" data-i18n="nav-internacional">Internacional</a>
+      <a href="#modalidades" data-i18n="nav-modalidades">Modalidades</a>
+      <a href="estrutura.html" data-i18n="nav-estrutura">Estrutura</a>
+      <a href="cinquenta-anos.html" data-i18n="nav-50anos">50 Anos</a>
+      <a href="#contato" data-i18n="nav-contato">Contato</a>
+    </nav>
+    <a href="agendar.html" class="v2-btn-primary v2-mobile-nav-cta" data-i18n="nav-cta">Agendar aula</a>
+  </div>
 
   <!-- ===================== HERO ===================== -->
   <section class="v2-hero" id="hero">
     <div class="v2-hero-inner">
       <!-- Texto -->
       <div class="v2-hero-text">
-        <div class="v2-hero-eyebrow" data-i18n="hero-eyebrow">Desde 1975</div>
         <h1 class="v2-hero-h1" data-i18n="hero-h1">50 anos formando<br><em>talentos</em><br>no ballet.</h1>
+        <div class="v2-hero-eyebrow" data-i18n="hero-eyebrow">Desde 1975</div>
         <ul class="v2-hero-bullets">
           <li data-i18n="hero-b1">Formação artística completa com 12 modalidades</li>
           <li data-i18n="hero-b2">Método Vaganova com professores especializados</li>
@@ -62,10 +79,59 @@
         </form>
         <p class="v2-hero-disclaimer" data-i18n="hero-disclaimer">Ao enviar você concorda com nossa política de privacidade</p>
       </div>
-      <!-- Imagem -->
+      <!-- Imagem / Dancer Scene -->
       <div class="v2-hero-image">
-        <div class="v2-hero-img-wrap v2-ph">
+        <!-- Desktop: placeholder estático -->
+        <div class="v2-hero-img-wrap v2-ph v2-desktop-only">
           <span class="v2-ph-label">ballet · barra clássica · alunas em formação</span>
+        </div>
+
+        <!-- Mobile: bailarina flutuante + 4 cards -->
+        <div class="v2-dancer-scene v2-mobile-only">
+          <!-- Card topo-esquerda -->
+          <div class="v2-fc v2-fc-tl">
+            <span class="v2-fc-icon">🩰</span>
+            <div>
+              <strong>Formação artística</strong>
+              <span>12 modalidades para todas as idades</span>
+            </div>
+          </div>
+          <!-- Card topo-direita -->
+          <div class="v2-fc v2-fc-tr">
+            <span class="v2-fc-icon">🏆</span>
+            <div>
+              <strong>Reconhecimento</strong>
+              <span>Prix de Lausanne e festivais internacionais</span>
+            </div>
+          </div>
+
+          <!-- Bailarina central -->
+          <div class="v2-dancer-wrap">
+            <img
+              src="assets/dancer.png"
+              alt="Bailarina BBT Art Academy"
+              class="v2-dancer-img"
+              onerror="this.style.display='none';this.parentElement.classList.add('v2-dancer-fallback');"
+            />
+            <div class="v2-dancer-glow"></div>
+          </div>
+
+          <!-- Card baixo-esquerda -->
+          <div class="v2-fc v2-fc-bl">
+            <span class="v2-fc-icon">👶</span>
+            <div>
+              <strong>Para todas as idades</strong>
+              <span>De 4 anos até adultos</span>
+            </div>
+          </div>
+          <!-- Card baixo-direita -->
+          <div class="v2-fc v2-fc-br">
+            <span class="v2-fc-icon">🌍</span>
+            <div>
+              <strong>Palco internacional</strong>
+              <span>Bolshoi, Stuttgart, Royal Ballet</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1150,6 +1216,28 @@
     window.addEventListener('scroll', function() {
       header.classList.toggle('scrolled', window.scrollY > 30);
     }, { passive: true });
+
+    // ============================================================
+    // Hamburger / mobile nav
+    // ============================================================
+    var hamburger = document.getElementById('v2-hamburger');
+    var mobileNav = document.getElementById('v2-mobile-nav');
+    hamburger.addEventListener('click', function() {
+      var open = mobileNav.classList.toggle('open');
+      hamburger.classList.toggle('open', open);
+      hamburger.setAttribute('aria-expanded', String(open));
+      mobileNav.setAttribute('aria-hidden', String(!open));
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+    mobileNav.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        mobileNav.classList.remove('open');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        mobileNav.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      });
+    });
 
     // ============================================================
     // Video click

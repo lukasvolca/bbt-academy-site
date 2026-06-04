@@ -1371,7 +1371,7 @@
     // ============================================================
     (function() {
       var stackCards = Array.from(document.querySelectorAll('#reconhecimento .proof-card'));
-      var STICKY_TOP = 90;
+      var STICKY_TOP = window.innerHeight * 0.30 + 2;
 
       function updateStack() {
         if (window.innerWidth > 880) {
@@ -1416,7 +1416,10 @@
       }
 
       window.addEventListener('scroll', updateStack, { passive: true });
-      window.addEventListener('resize', updateStack, { passive: true });
+      window.addEventListener('resize', function() {
+        STICKY_TOP = window.innerHeight * 0.30 + 2;
+        updateStack();
+      }, { passive: true });
       updateStack();
     })();
   </script>

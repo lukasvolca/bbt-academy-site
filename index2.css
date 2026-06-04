@@ -276,23 +276,23 @@
 }
 /* positions — absolutas relativas ao .v2-dancer-scene */
 .v2-fc-tl {
-  top: 10px;
+  top: -40px;
   left: 4px;
   animation: fcFloat1 3.8s ease-in-out infinite;
-  z-index: 5;
+  z-index: 0;
 }
 .v2-fc-tr {
-  top: 20px;
+  top: 150px;
   right: 4px;
   animation: fcFloat2 4.2s ease-in-out infinite;
   z-index: 5;
 }
 .v2-fc-bc {
   bottom: -60px;
-  left: 50%;
+  left: 5%;
   transform: translateX(-50%);
   animation: fcFloat3 4s ease-in-out infinite;
-  z-index: 5;
+  z-index: 0;
 }
 
 @keyframes fcFloat1 {
@@ -418,7 +418,7 @@
   .v2-hero-image {
     order: 2;
     width: calc(100% + 2 * var(--gutter)) !important;
-    margin: 0 calc(-1 * var(--gutter)) !important;
+    margin: 40px calc(-1 * var(--gutter)) 60px !important;
     max-width: unset !important;
   }
 }

@@ -1733,12 +1733,7 @@
   --v2-ph-radius: 20px 20px 64px 20px;
 }
 .v2-tq-quote-mark {
-  font-family: var(--font-display);
-  font-size: 120px;
-  line-height: 1;
-  color: var(--accent);
-  margin-bottom: -28px;
-  display: block;
+  display: none;
 }
 .v2-tq-blockquote {
   font-family: var(--font-display);

@@ -1638,13 +1638,22 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  transition:
-    box-shadow 0.35s,
-    transform 0.35s;
+  transform-origin: bottom center;
+  will-change: transform, opacity;
 }
-.v2-diff-card:hover {
-  box-shadow: 0 8px 36px rgba(168, 88, 104, 0.12);
-  transform: translateY(-4px);
+/* estado inicial — JS anima para o estado final via scroll */
+.v2-diff-card.diff-animate {
+  opacity: 0;
+  transform: scale(0.82) translateY(60px);
+}
+@media (min-width: 881px) {
+  .v2-diff-card {
+    transition: box-shadow 0.35s, transform 0.35s;
+  }
+  .v2-diff-card:hover {
+    box-shadow: 0 8px 36px rgba(168, 88, 104, 0.12);
+    transform: translateY(-4px);
+  }
 }
 .v2-diff-avatar {
   font-size: 28px;

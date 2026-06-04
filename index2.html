@@ -253,7 +253,26 @@
         <p class="v2-programs-sub" data-i18n="prog-sub">A BBT atende alunos de 4 anos até adultos — cada programa pensado para a faixa etária, o nível técnico e os objetivos de cada aluno. Doze caminhos para um mesmo palco.</p>
       </div>
 
-      <!-- Tabs -->
+      <!-- Dropdown (mobile only) -->
+      <div class="v2-tabs-select-wrap">
+        <select id="v2-tab-select" class="v2-tabs-select" aria-label="Selecionar modalidade">
+          <option value="infantil" data-i18n-opt="tab-infantil">Ballet Infantil</option>
+          <option value="classico" data-i18n-opt="tab-classico">Ballet Clássico</option>
+          <option value="adulto"   data-i18n-opt="tab-adulto">Adultos</option>
+          <option value="jazz"     data-i18n-opt="tab-jazz">Jazz</option>
+          <option value="cenico"   data-i18n-opt="tab-cenico">Teatro Musical</option>
+          <option value="audiovisual" data-i18n-opt="tab-audiovisual">Audiovisual</option>
+          <option value="marcial"  data-i18n-opt="tab-marcial">Artes Marciais</option>
+          <option value="hiphop"   data-i18n-opt="tab-hiphop">Hip Hop</option>
+          <option value="ritmica"  data-i18n-opt="tab-ritmica">Ginástica Rítmica</option>
+          <option value="contemp"  data-i18n-opt="tab-contemp">Dança Contemporânea</option>
+          <option value="forro"    data-i18n-opt="tab-forro">Forró Cabrueira</option>
+          <option value="canto"    data-i18n-opt="tab-canto">Canto Adulto</option>
+        </select>
+        <span class="v2-tabs-select-arrow">▾</span>
+      </div>
+
+      <!-- Tabs (desktop only) -->
       <div class="v2-tabs" role="tablist">
         <button class="v2-tab active" data-tab="infantil" role="tab" data-i18n="tab-infantil">Ballet Infantil</button>
         <button class="v2-tab" data-tab="classico" role="tab" data-i18n="tab-classico">Ballet Clássico</button>
@@ -1206,16 +1225,25 @@
     // ============================================================
     // Tab switching
     // ============================================================
-    document.querySelectorAll('.v2-tab').forEach(function(tab) {
-      tab.addEventListener('click', function() {
-        var id = this.dataset.tab;
-        document.querySelectorAll('.v2-tab').forEach(function(t) { t.classList.remove('active'); });
-        document.querySelectorAll('.v2-tab-pane').forEach(function(p) { p.classList.remove('active'); });
-        this.classList.add('active');
-        var pane = document.getElementById('tab-' + id);
-        if (pane) pane.classList.add('active');
+    function switchTab(id) {
+      document.querySelectorAll('.v2-tab').forEach(function(t) {
+        t.classList.toggle('active', t.dataset.tab === id);
       });
+      document.querySelectorAll('.v2-tab-pane').forEach(function(p) { p.classList.remove('active'); });
+      var pane = document.getElementById('tab-' + id);
+      if (pane) pane.classList.add('active');
+      var sel = document.getElementById('v2-tab-select');
+      if (sel) sel.value = id;
+    }
+
+    document.querySelectorAll('.v2-tab').forEach(function(tab) {
+      tab.addEventListener('click', function() { switchTab(this.dataset.tab); });
     });
+
+    var tabSelect = document.getElementById('v2-tab-select');
+    if (tabSelect) {
+      tabSelect.addEventListener('change', function() { switchTab(this.value); });
+    }
 
     // ============================================================
     // Header scroll

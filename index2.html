@@ -1367,37 +1367,57 @@
       });
     });
 
-    // Proof cards — stacking scale effect (mobile only)
+    // Proof cards — stacking + blur effect (mobile only)
     // ============================================================
     (function() {
       var stackCards = Array.from(document.querySelectorAll('#reconhecimento .proof-card'));
-      var STICKY_TOP = 88;
+      var STICKY_TOP = 90;
 
       function updateStack() {
         if (window.innerWidth > 880) {
-          stackCards.forEach(function(c) { c.style.transform = ''; });
+          stackCards.forEach(function(c) {
+            c.style.transform = '';
+            c.style.filter = '';
+            c.style.opacity = '';
+          });
           return;
         }
+
         stackCards.forEach(function(card, i) {
           var rect = card.getBoundingClientRect();
-          var isStuck = rect.top <= STICKY_TOP + 2;
-          if (!isStuck) { card.style.transform = ''; return; }
+          var isStuck = rect.top <= STICKY_TOP;
 
-          // Count how many cards BEFORE this one are already stuck (they're underneath)
-          var depth = 0;
-          for (var j = 0; j < i; j++) {
-            if (stackCards[j].getBoundingClientRect().top <= STICKY_TOP + 2) depth++;
+          if (!isStuck) {
+            card.style.transform = '';
+            card.style.filter = '';
+            card.style.opacity = '';
+            return;
           }
-          if (depth === 0) { card.style.transform = ''; return; }
 
-          var scale = Math.max(0.82, 1 - depth * 0.05);
-          var ty = -depth * 6;
-          card.style.transform = 'scale(' + scale + ') translateY(' + ty + 'px)';
+          // Quantos cards DEPOIS deste estão presos por cima?
+          var coveredBy = 0;
+          for (var j = i + 1; j < stackCards.length; j++) {
+            if (stackCards[j].getBoundingClientRect().top <= STICKY_TOP) coveredBy++;
+          }
+
+          if (coveredBy === 0) {
+            card.style.transform = '';
+            card.style.filter = '';
+            card.style.opacity = '';
+          } else {
+            var scale      = Math.max(0.84, 1 - coveredBy * 0.04);
+            var blurPx     = Math.min(10, coveredBy * 3.5);
+            var brightness = Math.max(0.78, 1 - coveredBy * 0.07);
+            card.style.transform  = 'scale(' + scale + ')';
+            card.style.filter     = 'blur(' + blurPx + 'px) brightness(' + brightness + ')';
+            card.style.opacity    = Math.max(0.6, 1 - coveredBy * 0.12);
+          }
         });
       }
 
       window.addEventListener('scroll', updateStack, { passive: true });
       window.addEventListener('resize', updateStack, { passive: true });
+      updateStack();
     })();
   </script>
 </body>

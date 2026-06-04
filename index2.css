@@ -5,6 +5,104 @@
 html { overflow-x: hidden; }
 body { overflow-x: visible; }
 
+/* ---- HERO CTA BUTTON (desktop) ---- */
+.v2-hero-modal-btn {
+  margin-top: 36px;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* ---- MODAL ---- */
+.v2-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(42, 24, 32, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.v2-modal-overlay.open {
+  display: flex;
+}
+.v2-modal-box {
+  background: var(--bg);
+  border-radius: 24px;
+  padding: 48px 40px 40px;
+  width: 100%;
+  max-width: 440px;
+  position: relative;
+  box-shadow: 0 32px 80px rgba(42, 24, 32, 0.22);
+}
+.v2-modal-close {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: var(--text-dim);
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.2s;
+}
+.v2-modal-close:hover { color: var(--accent-deep); }
+.v2-modal-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+.v2-modal-title {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(28px, 4vw, 38px);
+  line-height: 1.1;
+  color: var(--text);
+  margin-bottom: 32px;
+}
+.v2-modal-title em { color: var(--accent-deep); font-style: italic; }
+.v2-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.v2-modal-form input {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  background: var(--bg-elev);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.v2-modal-form input:focus { border-color: var(--accent); }
+.v2-modal-form .v2-btn-primary {
+  width: 100%;
+  justify-content: center;
+  padding: 15px;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+.v2-modal-disclaimer {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.6;
+}
+
 .wa-float {
   position: fixed !important;
   bottom: 20px !important;
@@ -1057,6 +1155,10 @@ body { overflow-x: visible; }
   .v2-tabs { display: none !important; }
 }
 
+.v2-tabs-break {
+  flex-basis: 100%;
+  height: 0;
+}
 .v2-tabs {
   display: flex;
   gap: 10px;
@@ -1371,14 +1473,34 @@ body { overflow-x: visible; }
   margin-bottom: 40px;
 }
 .v2-teachers-stat {
-  background: var(--bg-elev);
-  border: 1px solid var(--line);
+  background: rgba(246, 236, 228, 0.52);
+  backdrop-filter: blur(18px) saturate(1.5);
+  -webkit-backdrop-filter: blur(18px) saturate(1.5);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-bottom-color: rgba(200, 122, 134, 0.2);
   border-radius: 18px;
   padding: 28px 32px;
   display: flex;
   align-items: center;
   gap: 28px;
+  box-shadow: 0 4px 24px rgba(168, 88, 104, 0.08), inset 0 1px 0 rgba(255,255,255,0.85);
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  overflow: hidden;
+  position: relative;
 }
+.v2-teachers-stat::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle at var(--mx,50%) var(--my,50%), rgba(255,255,255,0.28) 0%, transparent 65%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.v2-teachers-stat:hover::after { opacity: 1; }
 .v2-avatars {
   display: flex;
 }
@@ -1664,8 +1786,11 @@ body { overflow-x: visible; }
   gap: 24px;
 }
 .v2-diff-card {
-  background: var(--bg-elev);
-  border: 1px solid var(--line);
+  background: rgba(246, 236, 228, 0.52);
+  backdrop-filter: blur(18px) saturate(1.5);
+  -webkit-backdrop-filter: blur(18px) saturate(1.5);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-bottom-color: rgba(200, 122, 134, 0.2);
   border-radius: 22px;
   padding: 36px 32px;
   display: flex;
@@ -1673,7 +1798,22 @@ body { overflow-x: visible; }
   gap: 16px;
   transform-origin: bottom center;
   will-change: transform, opacity;
+  box-shadow: 0 4px 24px rgba(168, 88, 104, 0.08), inset 0 1px 0 rgba(255,255,255,0.85);
+  transform-style: preserve-3d;
+  overflow: hidden;
+  position: relative;
 }
+.v2-diff-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle at var(--mx,50%) var(--my,50%), rgba(255,255,255,0.28) 0%, transparent 65%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.v2-diff-card:hover::after { opacity: 1; }
 /* estado inicial — JS anima para o estado final via scroll */
 .v2-diff-card.diff-animate {
   opacity: 0;

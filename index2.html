@@ -70,14 +70,9 @@
           <li data-i18n="hero-b3">Palco internacional e festivais reconhecidos</li>
           <li data-i18n="hero-b4">Aulas para crianças, adolescentes e adultos</li>
         </ul>
-        <div class="v2-hero-form-label v2-desktop-only" data-i18n="hero-form-label">Primeira aula gratuita!</div>
-        <form class="v2-hero-form v2-desktop-only" onsubmit="event.preventDefault()">
-          <input type="text" data-i18n-ph="ph-name" placeholder="Seu nome" />
-          <input type="tel" data-i18n-ph="ph-phone" placeholder="Telefone com DDD" />
-          <input type="email" data-i18n-ph="ph-email" placeholder="E-mail" />
-          <button type="submit" data-i18n="hero-btn">Agendar</button>
-        </form>
-        <p class="v2-hero-disclaimer v2-desktop-only" data-i18n="hero-disclaimer">Ao enviar você concorda com nossa política de privacidade</p>
+        <button class="v2-btn-primary v2-hero-modal-btn v2-desktop-only" id="v2-open-modal" data-i18n="hero-cta-btn">
+          Agendar aula experimental →
+        </button>
       </div>
       <!-- Imagem / Dancer Scene -->
       <div class="v2-hero-image">
@@ -277,6 +272,7 @@
         <button class="v2-tab" data-tab="jazz" role="tab" data-i18n="tab-jazz">Jazz</button>
         <button class="v2-tab" data-tab="cenico" role="tab" data-i18n="tab-cenico">Teatro Musical</button>
         <button class="v2-tab" data-tab="audiovisual" role="tab" data-i18n="tab-audiovisual">Audiovisual</button>
+        <div class="v2-tabs-break"></div>
         <button class="v2-tab" data-tab="marcial" role="tab" data-i18n="tab-marcial">Artes Marciais</button>
         <button class="v2-tab" data-tab="hiphop" role="tab" data-i18n="tab-hiphop">Hip Hop</button>
         <button class="v2-tab" data-tab="ritmica" role="tab" data-i18n="tab-ritmica">Ginástica Rítmica</button>
@@ -949,6 +945,22 @@
   <!-- Scroll dots -->
   <div class="scroll-dots" id="v2-scroll-dots" aria-hidden="true"></div>
 
+  <!-- Modal agendar aula -->
+  <div class="v2-modal-overlay" id="v2-modal" role="dialog" aria-modal="true" aria-label="Agendar aula experimental">
+    <div class="v2-modal-box">
+      <button class="v2-modal-close" id="v2-close-modal" aria-label="Fechar">✕</button>
+      <p class="v2-modal-eyebrow">— Primeira aula gratuita</p>
+      <h3 class="v2-modal-title">Agendar aula<br><em>experimental</em></h3>
+      <form class="v2-modal-form" onsubmit="event.preventDefault();document.getElementById('v2-modal').classList.remove('open');">
+        <input type="text"  placeholder="Seu nome"          required />
+        <input type="tel"   placeholder="Telefone com DDD"  required />
+        <input type="email" placeholder="E-mail"            required />
+        <button type="submit" class="v2-btn-primary">Agendar →</button>
+      </form>
+      <p class="v2-modal-disclaimer">Ao enviar você concorda com nossa política de privacidade · Sem compromisso · Vagas limitadas</p>
+    </div>
+  </div>
+
   <!-- WhatsApp float -->
   <a href="https://wa.me/551132875050" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
     <svg viewBox="0 0 32 32" aria-hidden="true">
@@ -1273,6 +1285,22 @@
     });
 
     // ============================================================
+    // Modal — agendar aula
+    // ============================================================
+    (function() {
+      var modal  = document.getElementById('v2-modal');
+      var openBtn  = document.getElementById('v2-open-modal');
+      var closeBtn = document.getElementById('v2-close-modal');
+      if (!modal) return;
+      function openModal()  { modal.classList.add('open');    document.body.style.overflow = 'hidden'; }
+      function closeModal() { modal.classList.remove('open'); document.body.style.overflow = ''; }
+      if (openBtn)  openBtn.addEventListener('click', openModal);
+      if (closeBtn) closeBtn.addEventListener('click', closeModal);
+      modal.addEventListener('click', function(e) { if (e.target === modal) closeModal(); });
+      document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+    })();
+
+    // ============================================================
     // Video click
     // ============================================================
     document.getElementById('v2-video-frame').addEventListener('click', function() {
@@ -1360,6 +1388,36 @@
     })();
 
     // ============================================================
+    // Tilt + shine helper (reutilizado em vários elementos)
+    // ============================================================
+    function addTilt(selector, rotMax) {
+      rotMax = rotMax || 10;
+      document.querySelectorAll(selector).forEach(function(card) {
+        card.addEventListener('mouseenter', function() {
+          this.style.transition = 'box-shadow 0.45s ease, border-color 0.45s ease, transform 0.12s ease';
+        });
+        card.addEventListener('mousemove', function(e) {
+          var rect = this.getBoundingClientRect();
+          var dx = (e.clientX - (rect.left + rect.width  / 2)) / (rect.width  / 2);
+          var dy = (e.clientY - (rect.top  + rect.height / 2)) / (rect.height / 2);
+          var rotY =  dx * rotMax;
+          var rotX = -dy * (rotMax * 0.75);
+          this.style.transform = 'perspective(900px) rotateX(' + rotX.toFixed(2) + 'deg) rotateY(' + rotY.toFixed(2) + 'deg) scale3d(1.025,1.025,1.025)';
+          var mx = (((e.clientX - rect.left) / rect.width)  * 100).toFixed(1);
+          var my = (((e.clientY - rect.top)  / rect.height) * 100).toFixed(1);
+          this.style.setProperty('--mx', mx + '%');
+          this.style.setProperty('--my', my + '%');
+        });
+        card.addEventListener('mouseleave', function() {
+          this.style.transition = 'box-shadow 0.45s ease, border-color 0.45s ease, transform 0.55s ease';
+          this.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg) scale3d(1,1,1)';
+        });
+      });
+    }
+
+    addTilt('.v2-diff-card', 10);
+    addTilt('.v2-teachers-stat', 8);
+
     // Proof cards — 3D perspective tilt + shine
     // ============================================================
     document.querySelectorAll('#reconhecimento .proof-card').forEach(function(card) {

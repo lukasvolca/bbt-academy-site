@@ -5,6 +5,13 @@
 html { overflow-x: hidden; }
 body { overflow-x: visible; }
 
+.wa-float {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  left: auto !important;
+}
+
 /* ---- HEADER ---- */
 .v2-header {
   position: fixed;

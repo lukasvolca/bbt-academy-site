@@ -199,8 +199,8 @@
   <!-- ===================== PROOF / RECONHECIMENTO ===================== -->
   <section class="block proof" id="reconhecimento">
     <div class="container">
-      <div class="block-head reveal">
-        <span class="eyebrow" data-i18n="proof-eyebrow">— Reconhecimento</span>
+      <span class="eyebrow v2-proof-eyebrow" data-i18n="proof-eyebrow">— Reconhecimento</span>
+      <div class="block-head reveal v2-proof-head">
         <h2 class="display-md" data-i18n="proof-title">Palco internacional,<br><em>raízes brasileiras.</em></h2>
       </div>
       <div class="proof-grid reveal-stagger">
@@ -1425,14 +1425,16 @@
     // ============================================================
     (function() {
       var stackCards = Array.from(document.querySelectorAll('#reconhecimento .proof-card'));
-      var proofHead  = document.querySelector('#reconhecimento .block-head');
+      var proofHead      = document.querySelector('#reconhecimento .v2-proof-head');
+      var proofEyebrow   = document.querySelector('#reconhecimento .v2-proof-eyebrow');
       var CASCADE_OFFSET = 18;
       var HEADER_H = 88;
 
       function getBaseTop() {
-        // logo abaixo do heading sticky: topo do header + altura do heading + pequena margem
-        if (window.innerWidth > 880 || !proofHead) return window.innerHeight * 0.55;
-        return HEADER_H + proofHead.offsetHeight + 12;
+        if (window.innerWidth > 880) return window.innerHeight * 0.55;
+        var eyebrowH = proofEyebrow ? proofEyebrow.offsetHeight : 28;
+        var headH    = proofHead    ? proofHead.offsetHeight    : 100;
+        return HEADER_H + eyebrowH + headH + 16;
       }
 
       function getStickyTop(i) {
@@ -1447,10 +1449,12 @@
         var vh = window.innerHeight;
         // começa a desaparecer quando o fundo da seção está a 70% da viewport
         var progress = Math.max(0, Math.min(1, (bottom - vh * 0.3) / (vh * 0.4)));
-        proofHead.style.opacity = progress;
-        proofHead.style.transform = progress < 1
-          ? 'translateY(' + ((1 - progress) * -16) + 'px)'
-          : '';
+        var ty = progress < 1 ? 'translateY(' + ((1 - progress) * -16) + 'px)' : '';
+        [proofHead, proofEyebrow].forEach(function(el) {
+          if (!el) return;
+          el.style.opacity = progress;
+          el.style.transform = ty;
+        });
       }
 
       function applyCardTops() {

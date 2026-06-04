@@ -555,16 +555,24 @@
 }
 
 @media (max-width: 880px) {
-  /* Heading fica colado no topo enquanto os cards empilham abaixo */
-  #reconhecimento .block-head {
+  /* Eyebrow e heading ficam colados enquanto os cards empilham */
+  #reconhecimento .v2-proof-eyebrow {
+    display: block !important;
     position: sticky;
     top: 88px;
+    z-index: 11;
+    padding-bottom: 6px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  #reconhecimento .v2-proof-head {
+    position: sticky;
+    top: calc(88px + 28px); /* abaixo do eyebrow */
     z-index: 10;
-    padding-bottom: 16px;
+    padding-bottom: 12px;
     margin-bottom: 0;
     flex-direction: column !important;
     align-items: flex-start !important;
-    gap: 4px !important;
+    gap: 0 !important;
     transition: opacity 0.3s ease, transform 0.3s ease;
   }
 

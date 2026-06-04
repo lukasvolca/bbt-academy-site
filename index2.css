@@ -818,9 +818,9 @@
 
 /* ---- STATS ---- */
 .v2-stats {
-  background: var(--bg-elev);
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  background: var(--accent-deep);
+  border-top: none;
+  border-bottom: none;
 }
 .v2-stats-inner {
   max-width: var(--container);
@@ -844,14 +844,14 @@
   font-family: var(--font-display);
   font-style: italic;
   font-size: clamp(40px, 5.5vw, 72px);
-  color: var(--accent-deep);
+  color: rgba(255, 255, 255, 0.95);
   line-height: 0.95;
 }
 .v2-stat-label {
   font-size: 11px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.55);
   font-family: var(--font-mono);
 }
 .v2-stat-sep {

@@ -189,8 +189,8 @@
 .v2-dancer-wrap {
   position: relative;
   z-index: 4;
-  width: 200px;
-  height: 300px;
+  width: 500px;
+  height: 500px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -227,24 +227,27 @@
 /* Floating cards */
 .v2-fc {
   position: absolute;
-  background: rgba(246, 236, 228, 0.88);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(200, 122, 134, 0.2);
+  background: rgba(246, 236, 228, 0.45);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-bottom-color: rgba(200, 122, 134, 0.25);
+  border-right-color: rgba(200, 122, 134, 0.15);
   border-radius: 18px;
-  padding: 34px 18px 16px 18px; /* top padding deixa espaço pro ícone externo */
+  padding: 34px 18px 16px 18px;
   max-width: 190px;
   box-shadow:
-    0 4px 20px rgba(168, 88, 104, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    0 8px 32px rgba(168, 88, 104, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -1px 0 rgba(200, 122, 134, 0.1);
   z-index: 3;
 }
 /* Ícone grudado no canto superior esquerdo do card */
 .v2-fc-icon {
   position: absolute;
-  top: -4px;
-  left: -1px;
-  font-size: 42px;
+  top: -10px;
+  left: -10px;
+  font-size: 24px;
   line-height: 1;
   filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.15));
 }
@@ -269,27 +272,27 @@
   color: var(--text);
   line-height: 1.3;
 }
-.v2-fc span {
+.v2-fc span:not(.v2-fc-icon) {
   font-size: 12px;
   color: var(--text-dim);
   line-height: 1.4;
 }
 /* positions — absolutas relativas ao .v2-dancer-scene */
 .v2-fc-tl {
-  top: -40px;
-  left: 4px;
+  top: -70px;
+  left: 30px;
   animation: fcFloat1 3.8s ease-in-out infinite;
   z-index: 0;
 }
 .v2-fc-tr {
   top: 150px;
-  right: 4px;
+  right: 20px;
   animation: fcFloat2 4.2s ease-in-out infinite;
   z-index: 5;
 }
 .v2-fc-bc {
-  bottom: -60px;
-  left: 5%;
+  bottom: -70px;
+  left: 10%;
   transform: translateX(-50%);
   animation: fcFloat3 4s ease-in-out infinite;
   z-index: 0;
@@ -378,7 +381,7 @@
   }
   .v2-hero-eyebrow {
     justify-content: center;
-    margin-top: 8px;
+    margin-top: 2px;
     margin-bottom: 0;
   }
   .v2-hero-h1 {
@@ -418,7 +421,7 @@
   .v2-hero-image {
     order: 2;
     width: calc(100% + 2 * var(--gutter)) !important;
-    margin: 40px calc(-1 * var(--gutter)) 60px !important;
+    margin: 56px calc(-1 * var(--gutter)) 60px !important;
     max-width: unset !important;
   }
 }
@@ -553,13 +556,28 @@
 
 @media (max-width: 880px) {
   #reconhecimento .proof-grid {
-    grid-template-columns: 1fr 1fr;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    grid-template-columns: unset !important;
   }
-}
-@media (max-width: 520px) {
-  #reconhecimento .proof-grid {
-    grid-template-columns: 1fr;
+
+  #reconhecimento .proof-card {
+    position: sticky !important;
+    top: 88px !important;
+    margin-bottom: 16px;
+    transform-origin: top center;
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease !important;
   }
+
+  #reconhecimento .proof-card:nth-child(1) { z-index: 1; }
+  #reconhecimento .proof-card:nth-child(2) { z-index: 2; }
+  #reconhecimento .proof-card:nth-child(3) { z-index: 3; }
+  #reconhecimento .proof-card:nth-child(4) { z-index: 4; }
+  #reconhecimento .proof-card:nth-child(5) { z-index: 5; }
+  #reconhecimento .proof-card:nth-child(6) { z-index: 6; margin-bottom: 0; }
 }
 
 /* ---- SHARED PLACEHOLDER (image boxes) ---- */
@@ -638,10 +656,12 @@
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--accent);
-  margin-bottom: 22px;
+  margin-bottom: 32px;
   display: flex;
   align-items: center;
   gap: 10px;
+  position: relative;
+  z-index: 10;
 }
 .v2-hero-eyebrow::before {
   content: "";
@@ -668,7 +688,7 @@
   line-height: 1.02;
   letter-spacing: -0.015em;
   color: var(--text);
-  margin-bottom: 28px;
+  margin-bottom: 8px;
 }
 .v2-hero-h1 em {
   color: var(--accent-deep);

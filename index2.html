@@ -1366,6 +1366,39 @@
         this.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg) scale3d(1,1,1)';
       });
     });
+
+    // Proof cards — stacking scale effect (mobile only)
+    // ============================================================
+    (function() {
+      var stackCards = Array.from(document.querySelectorAll('#reconhecimento .proof-card'));
+      var STICKY_TOP = 88;
+
+      function updateStack() {
+        if (window.innerWidth > 880) {
+          stackCards.forEach(function(c) { c.style.transform = ''; });
+          return;
+        }
+        stackCards.forEach(function(card, i) {
+          var rect = card.getBoundingClientRect();
+          var isStuck = rect.top <= STICKY_TOP + 2;
+          if (!isStuck) { card.style.transform = ''; return; }
+
+          // Count how many cards after this one are also stuck on top
+          var depth = 0;
+          for (var j = i + 1; j < stackCards.length; j++) {
+            if (stackCards[j].getBoundingClientRect().top <= STICKY_TOP + 2) depth++;
+          }
+          if (depth === 0) { card.style.transform = ''; return; }
+
+          var scale = Math.max(0.82, 1 - depth * 0.05);
+          var ty = -depth * 6;
+          card.style.transform = 'scale(' + scale + ') translateY(' + ty + 'px)';
+        });
+      }
+
+      window.addEventListener('scroll', updateStack, { passive: true });
+      window.addEventListener('resize', updateStack, { passive: true });
+    })();
   </script>
 </body>
 </html>

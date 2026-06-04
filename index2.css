@@ -1,5 +1,10 @@
 /* ===== INDEX 2 — BBT Art Academy · Clone do layout de referência ===== */
 
+/* Mover overflow-x: hidden do body para html evita que position:fixed
+   use o body como containing block e saia da tela */
+html { overflow-x: hidden; }
+body { overflow-x: visible; }
+
 /* ---- HEADER ---- */
 .v2-header {
   position: fixed;

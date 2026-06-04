@@ -107,12 +107,16 @@
 
           <!-- Bailarina central -->
           <div class="v2-dancer-wrap">
-            <img
-              src="assets/dancer.png"
-              alt="Bailarina BBT Art Academy"
+            <video
               class="v2-dancer-img"
-              onerror="this.style.display='none';this.parentElement.classList.add('v2-dancer-fallback');"
-            />
+              autoplay
+              loop
+              muted
+              playsinline
+            >
+              <source src="assets/images/ballehero.webm" type="video/webm" />
+              <source src="assets/images/ballehero.mov" type="video/quicktime" />
+            </video>
             <div class="v2-dancer-glow"></div>
           </div>
 

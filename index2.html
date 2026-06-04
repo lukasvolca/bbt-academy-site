@@ -1371,7 +1371,12 @@
     // ============================================================
     (function() {
       var stackCards = Array.from(document.querySelectorAll('#reconhecimento .proof-card'));
-      var STICKY_TOP = window.innerHeight * 0.30 + 2;
+      var BASE_VH = 0.30;
+      var CASCADE_OFFSET = 18; // px entre cada card
+
+      function getStickyTop(i) {
+        return window.innerHeight * BASE_VH + i * CASCADE_OFFSET + 2;
+      }
 
       function updateStack() {
         if (window.innerWidth > 880) {
@@ -1385,7 +1390,7 @@
 
         stackCards.forEach(function(card, i) {
           var rect = card.getBoundingClientRect();
-          var isStuck = rect.top <= STICKY_TOP;
+          var isStuck = rect.top <= getStickyTop(i);
 
           if (!isStuck) {
             card.style.transform = '';
@@ -1394,10 +1399,10 @@
             return;
           }
 
-          // Quantos cards DEPOIS deste estão presos por cima?
+          // Quantos cards depois deste estão presos (ficaram por cima)?
           var coveredBy = 0;
           for (var j = i + 1; j < stackCards.length; j++) {
-            if (stackCards[j].getBoundingClientRect().top <= STICKY_TOP) coveredBy++;
+            if (stackCards[j].getBoundingClientRect().top <= getStickyTop(j)) coveredBy++;
           }
 
           if (coveredBy === 0) {
@@ -1416,10 +1421,7 @@
       }
 
       window.addEventListener('scroll', updateStack, { passive: true });
-      window.addEventListener('resize', function() {
-        STICKY_TOP = window.innerHeight * 0.30 + 2;
-        updateStack();
-      }, { passive: true });
+      window.addEventListener('resize', updateStack, { passive: true });
       updateStack();
     })();
   </script>

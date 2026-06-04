@@ -1163,6 +1163,7 @@ body { overflow-x: visible; }
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+  justify-content: center;
   padding-bottom: 28px;
   margin-bottom: 36px;
   border-bottom: 1px solid var(--line);

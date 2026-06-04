@@ -560,7 +560,6 @@
     position: sticky;
     top: 88px;
     z-index: 10;
-    background: var(--bg);
     padding-bottom: 16px;
     margin-bottom: 0;
   }
@@ -583,13 +582,13 @@
     will-change: transform, filter;
   }
 
-  /* cascata: cada card para 18px abaixo do anterior */
-  #reconhecimento .proof-card:nth-child(1) { top: calc(55vh +  0px) !important; z-index: 1; }
-  #reconhecimento .proof-card:nth-child(2) { top: calc(55vh + 18px) !important; z-index: 2; }
-  #reconhecimento .proof-card:nth-child(3) { top: calc(55vh + 36px) !important; z-index: 3; }
-  #reconhecimento .proof-card:nth-child(4) { top: calc(55vh + 54px) !important; z-index: 4; }
-  #reconhecimento .proof-card:nth-child(5) { top: calc(55vh + 72px) !important; z-index: 5; }
-  #reconhecimento .proof-card:nth-child(6) { top: calc(55vh + 90px) !important; z-index: 6; margin-bottom: 0; }
+  /* top definido via JS com base na altura do heading */
+  #reconhecimento .proof-card:nth-child(1) { z-index: 1; }
+  #reconhecimento .proof-card:nth-child(2) { z-index: 2; }
+  #reconhecimento .proof-card:nth-child(3) { z-index: 3; }
+  #reconhecimento .proof-card:nth-child(4) { z-index: 4; }
+  #reconhecimento .proof-card:nth-child(5) { z-index: 5; }
+  #reconhecimento .proof-card:nth-child(6) { z-index: 6; margin-bottom: 0; }
 }
 
 /* ---- SHARED PLACEHOLDER (image boxes) ---- */

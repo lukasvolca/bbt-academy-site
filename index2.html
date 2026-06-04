@@ -1425,11 +1425,25 @@
     // ============================================================
     (function() {
       var stackCards = Array.from(document.querySelectorAll('#reconhecimento .proof-card'));
-      var BASE_VH = 0.55;
-      var CASCADE_OFFSET = 18; // px entre cada card
+      var proofHead  = document.querySelector('#reconhecimento .block-head');
+      var CASCADE_OFFSET = 18;
+      var HEADER_H = 88;
+
+      function getBaseTop() {
+        // logo abaixo do heading sticky: topo do header + altura do heading + pequena margem
+        if (window.innerWidth > 880 || !proofHead) return window.innerHeight * 0.55;
+        return HEADER_H + proofHead.offsetHeight + 12;
+      }
 
       function getStickyTop(i) {
-        return window.innerHeight * BASE_VH + i * CASCADE_OFFSET + 2;
+        return getBaseTop() + i * CASCADE_OFFSET + 2;
+      }
+
+      function applyCardTops() {
+        if (window.innerWidth > 880) { stackCards.forEach(function(c){ c.style.top = ''; }); return; }
+        stackCards.forEach(function(c, i) {
+          c.style.top = (getBaseTop() + i * CASCADE_OFFSET) + 'px';
+        });
       }
 
       function updateStack() {
@@ -1474,8 +1488,9 @@
         });
       }
 
+      applyCardTops();
       window.addEventListener('scroll', updateStack, { passive: true });
-      window.addEventListener('resize', updateStack, { passive: true });
+      window.addEventListener('resize', function() { applyCardTops(); updateStack(); }, { passive: true });
       updateStack();
     })();
   </script>

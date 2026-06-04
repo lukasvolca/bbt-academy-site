@@ -1383,9 +1383,9 @@
           var isStuck = rect.top <= STICKY_TOP + 2;
           if (!isStuck) { card.style.transform = ''; return; }
 
-          // Count how many cards after this one are also stuck on top
+          // Count how many cards BEFORE this one are already stuck (they're underneath)
           var depth = 0;
-          for (var j = i + 1; j < stackCards.length; j++) {
+          for (var j = 0; j < i; j++) {
             if (stackCards[j].getBoundingClientRect().top <= STICKY_TOP + 2) depth++;
           }
           if (depth === 0) { card.style.transform = ''; return; }

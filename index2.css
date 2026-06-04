@@ -572,12 +572,12 @@
       box-shadow 0.25s ease !important;
   }
 
-  #reconhecimento .proof-card:nth-child(1) { z-index: 1; }
-  #reconhecimento .proof-card:nth-child(2) { z-index: 2; }
-  #reconhecimento .proof-card:nth-child(3) { z-index: 3; }
-  #reconhecimento .proof-card:nth-child(4) { z-index: 4; }
-  #reconhecimento .proof-card:nth-child(5) { z-index: 5; }
-  #reconhecimento .proof-card:nth-child(6) { z-index: 6; margin-bottom: 0; }
+  #reconhecimento .proof-card:nth-child(1) { z-index: 6; }
+  #reconhecimento .proof-card:nth-child(2) { z-index: 5; }
+  #reconhecimento .proof-card:nth-child(3) { z-index: 4; }
+  #reconhecimento .proof-card:nth-child(4) { z-index: 3; }
+  #reconhecimento .proof-card:nth-child(5) { z-index: 2; }
+  #reconhecimento .proof-card:nth-child(6) { z-index: 1; margin-bottom: 0; }
 }
 
 /* ---- SHARED PLACEHOLDER (image boxes) ---- */

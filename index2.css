@@ -555,6 +555,16 @@
 }
 
 @media (max-width: 880px) {
+  /* Heading fica colado no topo enquanto os cards empilham abaixo */
+  #reconhecimento .block-head {
+    position: sticky;
+    top: 88px;
+    z-index: 10;
+    background: var(--bg);
+    padding-bottom: 16px;
+    margin-bottom: 0;
+  }
+
   #reconhecimento .proof-grid {
     display: flex !important;
     flex-direction: column !important;

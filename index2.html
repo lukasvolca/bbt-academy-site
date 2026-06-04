@@ -1439,6 +1439,20 @@
         return getBaseTop() + i * CASCADE_OFFSET + 2;
       }
 
+      // Fade out heading as section ends
+      var proofSection = document.getElementById('reconhecimento');
+      function updateProofHeadFade() {
+        if (window.innerWidth > 880 || !proofHead || !proofSection) return;
+        var bottom = proofSection.getBoundingClientRect().bottom;
+        var vh = window.innerHeight;
+        // começa a desaparecer quando o fundo da seção está a 70% da viewport
+        var progress = Math.max(0, Math.min(1, (bottom - vh * 0.3) / (vh * 0.4)));
+        proofHead.style.opacity = progress;
+        proofHead.style.transform = progress < 1
+          ? 'translateY(' + ((1 - progress) * -16) + 'px)'
+          : '';
+      }
+
       function applyCardTops() {
         if (window.innerWidth > 880) { stackCards.forEach(function(c){ c.style.top = ''; }); return; }
         stackCards.forEach(function(c, i) {
@@ -1489,8 +1503,9 @@
       }
 
       applyCardTops();
-      window.addEventListener('scroll', updateStack, { passive: true });
-      window.addEventListener('resize', function() { applyCardTops(); updateStack(); }, { passive: true });
+      updateProofHeadFade();
+      window.addEventListener('scroll', function() { updateStack(); updateProofHeadFade(); }, { passive: true });
+      window.addEventListener('resize', function() { applyCardTops(); updateStack(); updateProofHeadFade(); }, { passive: true });
       updateStack();
     })();
   </script>

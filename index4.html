@@ -9,9 +9,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Manrope:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="shared/styles.css" />
   <link rel="stylesheet" href="home.css" />
-  <link rel="stylesheet" href="index2.css" />
+  <link rel="stylesheet" href="index4.css" />
 </head>
-<body data-palette="cream">
+<body data-palette="bbt-dark">
 
   <!-- ===================== HEADER ===================== -->
   <header class="v2-header" id="v2-header">
@@ -779,7 +779,7 @@
       <!-- Slide 1 -->
       <div class="v2-tq-slide active">
         <div class="v2-tq-inner">
-          <div class="v2-tq-img-wrap v2-ph" style="background:radial-gradient(circle at 55% 30%,rgba(200,122,134,.28),transparent 60%),radial-gradient(circle at 20% 75%,rgba(168,88,104,.16),transparent 50%),var(--bg-elev);">
+          <div class="v2-tq-img-wrap v2-ph" style="background:radial-gradient(circle at 55% 30%,rgba(233,93,154,.28),transparent 60%),radial-gradient(circle at 20% 75%,rgba(248,192,195,.16),transparent 50%),var(--bg-elev);">
             <span class="v2-ph-label">Alumni · BBT Art Academy · Stuttgart Ballet</span>
           </div>
           <div class="v2-tq-text">
@@ -798,7 +798,7 @@
       <!-- Slide 2 -->
       <div class="v2-tq-slide">
         <div class="v2-tq-inner">
-          <div class="v2-tq-img-wrap v2-ph" style="background:radial-gradient(circle at 55% 30%,rgba(168,88,104,.22),transparent 60%),radial-gradient(circle at 20% 75%,rgba(140,60,80,.14),transparent 50%),var(--bg-elev);">
+          <div class="v2-tq-img-wrap v2-ph" style="background:radial-gradient(circle at 55% 30%,rgba(248,192,195,.22),transparent 60%),radial-gradient(circle at 20% 75%,rgba(140,60,80,.14),transparent 50%),var(--bg-elev);">
             <span class="v2-ph-label">Mãe da Luísa · Ballet Infantil · BBT Art Academy</span>
           </div>
           <div class="v2-tq-text">
@@ -1417,6 +1417,17 @@
 
     addTilt('.v2-diff-card', 10);
     addTilt('.v2-teachers-stat', 8);
+
+    // Festivals marquee — glow follows mouse
+    document.querySelectorAll('.festivals-marquee').forEach(function(el) {
+      el.addEventListener('mousemove', function(e) {
+        var rect = this.getBoundingClientRect();
+        var mx = (((e.clientX - rect.left) / rect.width) * 100).toFixed(1);
+        var my = (((e.clientY - rect.top) / rect.height) * 100).toFixed(1);
+        this.style.setProperty('--mx', mx + '%');
+        this.style.setProperty('--my', my + '%');
+      });
+    });
 
     // Proof cards — 3D perspective tilt + shine
     // ============================================================

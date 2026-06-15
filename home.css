@@ -331,7 +331,8 @@
   color: #1a0e0e;
 }
 body[data-palette="cream"] .mod-card:hover .mod-btn,
-body[data-palette="cream-gold"] .mod-card:hover .mod-btn {
+body[data-palette="cream-gold"] .mod-card:hover .mod-btn,
+body[data-palette="bbt-pink"] .mod-card:hover .mod-btn {
   color: #fff;
   background: var(--accent-deep);
   border-color: var(--accent-deep);

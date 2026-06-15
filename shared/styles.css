@@ -74,20 +74,60 @@ body[data-palette="gold"] {
   --accent-soft: rgba(212, 184, 150, 0.12);
 }
 
+/* BBT Pink — light bg, brand pink/salmon accents */
+body[data-palette="bbt-pink"] {
+  --bg-deep: #f4f3f2;
+  --bg: #ffffff;
+  --bg-elev: #ffffff;
+  --surface: #f8c0c3;
+  --line: rgba(149, 149, 149, 0.16);
+  --line-strong: rgba(149, 149, 149, 0.3);
+  --text: #2a2a2a;
+  --text-dim: #595959;
+  --text-muted: #959595;
+  --accent: #e95d9a;
+  --accent-deep: #c93f7c;
+  --accent-pale: #f8c0c3;
+  --accent-soft: rgba(233, 93, 154, 0.14);
+  --accent-section: #f8c0c3;
+}
+/* BBT Dark — black bg, brand pink/salmon accents (premium dark mode) */
+body[data-palette="bbt-dark"] {
+  --bg-deep: #000000;
+  --bg: #0a0a0a;
+  --bg-elev: #141414;
+  --surface: #1c1c1e;
+  --line: rgba(255, 255, 255, 0.08);
+  --line-strong: rgba(255, 255, 255, 0.16);
+  --text: #ffffff;
+  --text-dim: #e2e1df;
+  --text-muted: #959595;
+  --accent: #e95d9a;
+  --accent-deep: #f8c0c3;
+  --accent-pale: #f8c0c3;
+  --accent-soft: rgba(233, 93, 154, 0.16);
+  --accent-section: #f8c0c3;
+}
+
 /* Light palettes: button primary needs dark text */
 body[data-palette="cream"] .btn-primary,
 body[data-palette="cream-gold"] .btn-primary,
+body[data-palette="bbt-pink"] .btn-primary,
 body[data-palette="cream"] .header-cta,
 body[data-palette="cream-gold"] .header-cta,
+body[data-palette="bbt-pink"] .header-cta,
 body[data-palette="cream"] .sticky-cta,
-body[data-palette="cream-gold"] .sticky-cta {
+body[data-palette="cream-gold"] .sticky-cta,
+body[data-palette="bbt-pink"] .sticky-cta {
   color: #ffffff;
   background: var(--accent-deep);
 }
 body[data-palette="cream"] .btn-primary:hover,
 body[data-palette="cream-gold"] .btn-primary:hover,
+body[data-palette="bbt-pink"] .btn-primary:hover,
 body[data-palette="cream"] .header-cta:hover,
-body[data-palette="cream-gold"] .header-cta:hover {
+body[data-palette="cream-gold"] .header-cta:hover,
+body[data-palette="bbt-pink"] .header-cta:hover {
   background: var(--accent);
 }
 

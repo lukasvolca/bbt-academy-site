@@ -31,10 +31,6 @@
         <a href="cinquenta-anos.html" data-i18n="nav-50anos">50 Anos</a>
         <a href="#contato" data-i18n="nav-contato">Contato</a>
       </nav>
-      <button class="theme-toggle" id="v2-theme-toggle" aria-label="Alternar tema">
-        <span class="theme-toggle-icon theme-toggle-moon">🌙</span>
-        <span class="theme-toggle-icon theme-toggle-sun">☀</span>
-      </button>
       <div class="lang-toggle" id="v2-lang-toggle">
         <button data-lang="pt" class="active">PT</button>
         <span class="sep">/</span>
@@ -965,6 +961,11 @@
     </div>
   </div>
 
+  <!-- Theme toggle FAB -->
+  <button class="theme-fab" id="v2-theme-toggle" aria-label="Alternar tema claro/escuro">
+    <span class="theme-swatch" id="v2-theme-swatch"></span>
+  </button>
+
   <!-- WhatsApp float -->
   <a href="https://wa.me/551132875050" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
     <svg viewBox="0 0 32 32" aria-hidden="true">
@@ -1586,7 +1587,7 @@
     });
 
     // ============================================================
-    // Theme toggle (dark ↔ light)
+    // Theme toggle FAB (dark ↔ light)
     // ============================================================
     (function() {
       var DARK  = 'bbt-dark';
@@ -1596,11 +1597,11 @@
       function applyTheme(palette) {
         document.body.setAttribute('data-palette', palette);
         localStorage.setItem(KEY, palette);
-        var btn = document.getElementById('v2-theme-toggle');
-        if (btn) btn.setAttribute('data-active', palette === DARK ? 'dark' : 'light');
+        // swatch shows the OPPOSITE palette (what you'll switch to)
+        var swatch = document.getElementById('v2-theme-swatch');
+        if (swatch) swatch.setAttribute('data-pal', palette === DARK ? LIGHT : DARK);
       }
 
-      // Restore saved preference
       var saved = localStorage.getItem(KEY);
       applyTheme(saved === LIGHT ? LIGHT : DARK);
 

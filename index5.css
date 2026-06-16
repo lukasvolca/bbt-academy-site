@@ -5,6 +5,46 @@
 html { overflow-x: hidden; }
 body { overflow-x: visible; }
 
+/* ---- FESTIVALS MARQUEE (dark glass band) ---- */
+.festivals-marquee {
+  position: relative;
+  background: #121212;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+}
+.festivals-marquee::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    480px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(233, 93, 154, 0.16),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+.festivals-marquee:hover::before {
+  opacity: 1;
+}
+.festivals-marquee .marquee-eyebrow,
+.festivals-marquee .marquee-track {
+  position: relative;
+  z-index: 1;
+}
+.festivals-marquee .marquee-eyebrow .caption {
+  color: var(--text-muted);
+}
+.festivals-marquee .marquee-item {
+  color: var(--text-dim);
+}
+.festivals-marquee .marquee-item .star {
+  color: var(--accent);
+}
+
 /* ---- HERO CTA BUTTON (desktop) ---- */
 .v2-hero-modal-btn {
   margin-top: 36px;
@@ -19,7 +59,7 @@ body { overflow-x: visible; }
   position: fixed;
   inset: 0;
   z-index: 200;
-  background: rgba(42, 42, 42, 0.55);
+  background: rgba(0, 0, 0, 0.55);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   align-items: center;
@@ -36,7 +76,7 @@ body { overflow-x: visible; }
   width: 100%;
   max-width: 440px;
   position: relative;
-  box-shadow: 0 32px 80px rgba(42, 42, 42, 0.22);
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.22);
 }
 .v2-modal-close {
   position: absolute;
@@ -117,14 +157,14 @@ body { overflow-x: visible; }
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(248, 192, 195, 0.94);
+  background: rgba(8, 8, 8, 0.75);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--line);
   transition: box-shadow 0.3s;
 }
 .v2-header.scrolled {
-  box-shadow: 0 2px 24px rgba(42, 42, 42, 0.09);
+  box-shadow: 0 2px 24px rgba(0, 0, 0, 0.09);
 }
 .v2-header-inner {
   max-width: var(--container);
@@ -160,7 +200,7 @@ body { overflow-x: visible; }
   text-transform: uppercase;
   padding: 11px 26px;
   background: var(--accent-deep);
-  color: #fff !important;
+  color: #1a1a1a !important;
   border-radius: 999px;
   transition: all 0.3s;
   white-space: nowrap;
@@ -168,6 +208,7 @@ body { overflow-x: visible; }
 }
 .v2-nav-cta:hover {
   background: var(--accent);
+  color: #fff !important;
   transform: translateY(-1px);
 }
 /* ---- HAMBURGER ---- */
@@ -310,7 +351,7 @@ body { overflow-x: visible; }
   width: 100%;
   height: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 24px 40px rgba(201, 63, 124, 0.22));
+  filter: drop-shadow(0 24px 40px rgba(248, 192, 195, 0.22));
 }
 /* fallback gradient quando não há PNG */
 .v2-dancer-fallback {
@@ -322,7 +363,7 @@ body { overflow-x: visible; }
     ),
     radial-gradient(
       ellipse at 50% 80%,
-      rgba(201, 63, 124, 0.18) 0%,
+      rgba(248, 192, 195, 0.18) 0%,
       transparent 50%
     ),
     var(--bg-elev);
@@ -337,17 +378,17 @@ body { overflow-x: visible; }
 /* Floating cards */
 .v2-fc {
   position: absolute;
-  background: rgba(248, 192, 195, 0.45);
+  background: rgba(255, 255, 255, 0.045);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-bottom-color: rgba(233, 93, 154, 0.25);
   border-right-color: rgba(233, 93, 154, 0.15);
   border-radius: 18px;
   padding: 34px 18px 16px 18px;
   max-width: 190px;
   box-shadow:
-    0 8px 32px rgba(201, 63, 124, 0.18),
+    0 8px 32px rgba(248, 192, 195, 0.18),
     inset 0 1px 0 rgba(255, 255, 255, 0.9),
     inset 0 -1px 0 rgba(233, 93, 154, 0.1);
   z-index: 3;
@@ -542,7 +583,7 @@ body { overflow-x: visible; }
   align-items: center;
   padding: 13px 28px;
   background: var(--accent-deep);
-  color: #fff;
+  color: #1a1a1a;
   border-radius: 999px;
   font-size: 12px;
   font-weight: 500;
@@ -555,6 +596,7 @@ body { overflow-x: visible; }
 }
 .v2-btn-primary:hover {
   background: var(--accent);
+  color: #fff;
   transform: translateY(-1px);
 }
 .v2-btn-outline {
@@ -601,7 +643,7 @@ body { overflow-x: visible; }
     ),
     radial-gradient(
       ellipse at 72% 25%,
-      rgba(201, 63, 124, 0.07),
+      rgba(248, 192, 195, 0.07),
       transparent 50%
     ),
     var(--bg-elev);
@@ -620,11 +662,11 @@ body { overflow-x: visible; }
   border-bottom: 1px solid rgba(233, 93, 154, 0.22) !important;
   border-right: 1px solid rgba(233, 93, 154, 0.22) !important;
   border-radius: 18px;
-  background: rgba(248, 192, 195, 0.52) !important;
+  background: rgba(255, 255, 255, 0.05) !important;
   backdrop-filter: blur(18px) saturate(1.5);
   -webkit-backdrop-filter: blur(18px) saturate(1.5);
   box-shadow:
-    0 2px 16px rgba(201, 63, 124, 0.07),
+    0 2px 16px rgba(248, 192, 195, 0.07),
     inset 0 1px 0 rgba(255, 255, 255, 0.72);
   transform-style: preserve-3d;
   will-change: transform;
@@ -654,10 +696,10 @@ body { overflow-x: visible; }
 #reconhecimento .proof-card:hover {
   border-color: rgba(233, 93, 154, 0.38) !important;
   box-shadow:
-    0 16px 48px rgba(201, 63, 124, 0.16),
-    0 4px 16px rgba(201, 63, 124, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.85);
-  background: rgba(248, 192, 195, 0.68) !important;
+    0 16px 48px rgba(248, 192, 195, 0.16),
+    0 4px 16px rgba(248, 192, 195, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.07) !important;
 }
 
 #reconhecimento .proof-card:hover::after {
@@ -743,8 +785,8 @@ body { overflow-x: visible; }
   inset: 0;
   background: repeating-linear-gradient(
     135deg,
-    rgba(201, 63, 124, 0.04) 0px,
-    rgba(201, 63, 124, 0.04) 1px,
+    rgba(248, 192, 195, 0.04) 0px,
+    rgba(248, 192, 195, 0.04) 1px,
     transparent 1px,
     transparent 14px
   );
@@ -756,7 +798,7 @@ body { overflow-x: visible; }
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--text-muted);
-  background: rgba(248, 192, 195, 0.85);
+  background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(4px);
   padding: 5px 12px;
   border-radius: 999px;
@@ -909,6 +951,7 @@ body { overflow-x: visible; }
 }
 .v2-hero-form button:hover {
   background: var(--accent);
+  color: #fff;
   transform: translateY(-1px);
 }
 .v2-hero-disclaimer {
@@ -1029,7 +1072,7 @@ body { overflow-x: visible; }
     transform 0.35s;
 }
 .v2-benefit-card:hover {
-  box-shadow: 0 8px 36px rgba(201, 63, 124, 0.12);
+  box-shadow: 0 8px 36px rgba(248, 192, 195, 0.12);
   transform: translateY(-4px);
 }
 .v2-benefit-icon {
@@ -1187,7 +1230,7 @@ body { overflow-x: visible; }
 .v2-tab.active {
   background: var(--accent-deep);
   border-color: var(--accent-deep);
-  color: #fff;
+  color: #1a1a1a;
   font-weight: 500;
 }
 .v2-tab-pane {
@@ -1417,7 +1460,7 @@ body { overflow-x: visible; }
     ),
     radial-gradient(
       circle at 72% 68%,
-      rgba(201, 63, 124, 0.14),
+      rgba(248, 192, 195, 0.14),
       transparent 42%
     ),
     var(--surface);
@@ -1440,7 +1483,7 @@ body { overflow-x: visible; }
   border: 1px solid var(--accent);
   border-radius: 50%;
   color: var(--accent);
-  background: rgba(248, 192, 195, 0.55);
+  background: rgba(255, 255, 255, 0.055);
   backdrop-filter: blur(6px);
   transition: all 0.4s var(--ease);
 }
@@ -1485,17 +1528,17 @@ body { overflow-x: visible; }
   margin-bottom: 40px;
 }
 .v2-teachers-stat {
-  background: rgba(248, 192, 195, 0.52);
+  background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(18px) saturate(1.5);
   -webkit-backdrop-filter: blur(18px) saturate(1.5);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-bottom-color: rgba(233, 93, 154, 0.2);
   border-radius: 18px;
   padding: 28px 32px;
   display: flex;
   align-items: center;
   gap: 28px;
-  box-shadow: 0 4px 24px rgba(201, 63, 124, 0.08), inset 0 1px 0 rgba(255,255,255,0.85);
+  box-shadow: 0 4px 24px rgba(248, 192, 195, 0.08), inset 0 1px 0 rgba(255,255,255,0.85);
   transform-style: preserve-3d;
   will-change: transform;
   transition: transform 0.5s ease, box-shadow 0.5s ease;
@@ -1544,7 +1587,7 @@ body { overflow-x: visible; }
 .v2-av:nth-child(2) {
   background: radial-gradient(
     circle at 40% 30%,
-    rgba(201, 63, 124, 0.35),
+    rgba(248, 192, 195, 0.35),
     var(--surface)
   );
 }
@@ -1625,7 +1668,7 @@ body { overflow-x: visible; }
 .v2-ts-img-r {
   background: radial-gradient(
     circle at 40% 30%,
-    rgba(201, 63, 124, 0.3),
+    rgba(248, 192, 195, 0.3),
     var(--surface)
   );
 }
@@ -1799,10 +1842,10 @@ body { overflow-x: visible; }
   gap: 24px;
 }
 .v2-diff-card {
-  background: rgba(248, 192, 195, 0.52);
+  background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(18px) saturate(1.5);
   -webkit-backdrop-filter: blur(18px) saturate(1.5);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-bottom-color: rgba(233, 93, 154, 0.2);
   border-radius: 22px;
   padding: 36px 32px;
@@ -1811,7 +1854,7 @@ body { overflow-x: visible; }
   gap: 16px;
   transform-origin: bottom center;
   will-change: transform, opacity;
-  box-shadow: 0 4px 24px rgba(201, 63, 124, 0.08), inset 0 1px 0 rgba(255,255,255,0.85);
+  box-shadow: 0 4px 24px rgba(248, 192, 195, 0.08), inset 0 1px 0 rgba(255,255,255,0.85);
   transform-style: preserve-3d;
   overflow: hidden;
   position: relative;
@@ -1837,7 +1880,7 @@ body { overflow-x: visible; }
     transition: box-shadow 0.35s, transform 0.35s;
   }
   .v2-diff-card:hover {
-    box-shadow: 0 8px 36px rgba(201, 63, 124, 0.12);
+    box-shadow: 0 8px 36px rgba(248, 192, 195, 0.12);
     transform: translateY(-4px);
   }
 }
@@ -2035,7 +2078,7 @@ body { overflow-x: visible; }
   border: 1px solid rgba(233, 93, 154, 0.22) !important;
   border-radius: 20px 20px 64px 20px;
   box-shadow:
-    0 4px 24px rgba(201, 63, 124, 0.08),
+    0 4px 24px rgba(248, 192, 195, 0.08),
     inset 0 1px 0 rgba(255, 255, 255, 0.65);
 }
 
@@ -2209,7 +2252,7 @@ body { overflow-x: visible; }
     transform 0.35s;
 }
 .v2-testi-card:hover {
-  box-shadow: 0 8px 36px rgba(201, 63, 124, 0.1);
+  box-shadow: 0 8px 36px rgba(248, 192, 195, 0.1);
   transform: translateY(-3px);
 }
 .v2-testi-av {
@@ -2331,114 +2374,58 @@ body { overflow-x: visible; }
   border-color: var(--accent);
   color: #ffffff;
 }
+.final-cta .btn-primary:hover {
+  color: #1a1a1a;
+}
 
 /* ============================================================
-   THEME TOGGLE BUTTON
+   LIGHT PALETTE OVERRIDES (bbt-pink)
+   When user toggles to light mode, these rules revert dark-only
+   hardcoded colors back to white-text equivalents
    ============================================================ */
-.theme-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: 1px solid var(--line-strong);
-  background: transparent;
-  cursor: pointer;
-  transition: border-color 0.3s, background 0.3s;
-  flex-shrink: 0;
-  padding: 0;
-  color: var(--text);
-}
-.theme-toggle:hover {
-  border-color: var(--accent);
-  background: var(--accent-soft);
-}
-.theme-toggle-icon {
-  font-style: normal;
-  font-size: 15px;
-  line-height: 1;
-  pointer-events: none;
-}
-/* dark mode → show sun (to switch to light) */
-.theme-toggle[data-active="dark"]  .theme-toggle-moon { display: none; }
-.theme-toggle[data-active="dark"]  .theme-toggle-sun  { display: block; }
-/* light mode → show moon (to switch to dark) */
-.theme-toggle[data-active="light"] .theme-toggle-sun  { display: none; }
-.theme-toggle[data-active="light"] .theme-toggle-moon { display: block; }
-/* default before JS runs → show sun */
-.theme-toggle:not([data-active]) .theme-toggle-moon { display: none; }
-.theme-toggle:not([data-active]) .theme-toggle-sun  { display: block; }
-
-/* ============================================================
-   DARK PALETTE OVERRIDES
-   (bbt-dark uses --accent-deep = #f8c0c3 (salmon) as bg for
-   buttons/tabs, so text must be dark, not white)
-   ============================================================ */
-body[data-palette="bbt-dark"] .v2-nav-cta {
-  color: #1a1a1a !important;
-}
-body[data-palette="bbt-dark"] .v2-nav-cta:hover {
+body[data-palette="bbt-pink"] .v2-nav-cta {
   color: #fff !important;
 }
-body[data-palette="bbt-dark"] .v2-btn-primary {
-  color: #1a1a1a;
+body[data-palette="bbt-pink"] .v2-nav-cta:hover {
+  color: #fff !important;
 }
-body[data-palette="bbt-dark"] .v2-btn-primary:hover {
+body[data-palette="bbt-pink"] .v2-btn-primary {
   color: #fff;
 }
-body[data-palette="bbt-dark"] .v2-tab.active {
-  color: #1a1a1a;
-}
-body[data-palette="bbt-dark"] .v2-hero-form button {
-  color: #1a1a1a;
-}
-body[data-palette="bbt-dark"] .v2-cta-disclaimer {
-  color: rgba(255, 255, 255, 0.35);
-}
-body[data-palette="bbt-dark"] .final-cta .btn-primary {
+body[data-palette="bbt-pink"] .v2-btn-primary:hover {
   color: #fff;
 }
-body[data-palette="bbt-dark"] .final-cta .btn-primary:hover {
-  color: #1a1a1a;
+body[data-palette="bbt-pink"] .v2-tab.active {
+  color: #fff;
 }
-
-/* Festivals marquee — dark glass band with glow in dark mode */
-body[data-palette="bbt-dark"] .festivals-marquee {
-  position: relative;
-  background: #121212;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  overflow: hidden;
+body[data-palette="bbt-pink"] .v2-hero-form button {
+  color: #fff;
 }
-body[data-palette="bbt-dark"] .festivals-marquee::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    480px circle at var(--mx, 50%) var(--my, 50%),
-    rgba(233, 93, 154, 0.16),
-    transparent 70%
-  );
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  pointer-events: none;
-  z-index: 0;
+body[data-palette="bbt-pink"] .v2-cta-disclaimer {
+  color: rgba(0, 0, 0, 0.45);
 }
-body[data-palette="bbt-dark"] .festivals-marquee:hover::before {
-  opacity: 1;
+body[data-palette="bbt-pink"] .final-cta .btn-primary {
+  color: #fff;
 }
-body[data-palette="bbt-dark"] .festivals-marquee .marquee-eyebrow,
-body[data-palette="bbt-dark"] .festivals-marquee .marquee-track {
-  position: relative;
-  z-index: 1;
+body[data-palette="bbt-pink"] .final-cta .btn-primary:hover {
+  color: #fff;
 }
-body[data-palette="bbt-dark"] .festivals-marquee .marquee-eyebrow .caption {
-  color: var(--text-muted);
+/* Festivals marquee — bright/light style in light mode */
+body[data-palette="bbt-pink"] .festivals-marquee {
+  background: var(--bg);
 }
-body[data-palette="bbt-dark"] .festivals-marquee .marquee-item {
+body[data-palette="bbt-pink"] .festivals-marquee::before {
+  display: none;
+}
+body[data-palette="bbt-pink"] .festivals-marquee .marquee-item {
   color: var(--text-dim);
 }
-body[data-palette="bbt-dark"] .festivals-marquee .marquee-item .star {
-  color: var(--accent);
+body[data-palette="bbt-pink"] .festivals-marquee .marquee-eyebrow .caption {
+  color: var(--text-muted);
+}
+
+/* wa-float — keep above theme FAB */
+.wa-float {
+  bottom: 28px;
+  right: calc(100vw - 100% - 28px);
 }

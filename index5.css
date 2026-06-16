@@ -2331,3 +2331,114 @@ body { overflow-x: visible; }
   border-color: var(--accent);
   color: #ffffff;
 }
+
+/* ============================================================
+   THEME TOGGLE BUTTON
+   ============================================================ */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--line-strong);
+  background: transparent;
+  cursor: pointer;
+  transition: border-color 0.3s, background 0.3s;
+  flex-shrink: 0;
+  padding: 0;
+  color: var(--text);
+}
+.theme-toggle:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.theme-toggle-icon {
+  font-style: normal;
+  font-size: 15px;
+  line-height: 1;
+  pointer-events: none;
+}
+/* dark mode → show sun (to switch to light) */
+.theme-toggle[data-active="dark"]  .theme-toggle-moon { display: none; }
+.theme-toggle[data-active="dark"]  .theme-toggle-sun  { display: block; }
+/* light mode → show moon (to switch to dark) */
+.theme-toggle[data-active="light"] .theme-toggle-sun  { display: none; }
+.theme-toggle[data-active="light"] .theme-toggle-moon { display: block; }
+/* default before JS runs → show sun */
+.theme-toggle:not([data-active]) .theme-toggle-moon { display: none; }
+.theme-toggle:not([data-active]) .theme-toggle-sun  { display: block; }
+
+/* ============================================================
+   DARK PALETTE OVERRIDES
+   (bbt-dark uses --accent-deep = #f8c0c3 (salmon) as bg for
+   buttons/tabs, so text must be dark, not white)
+   ============================================================ */
+body[data-palette="bbt-dark"] .v2-nav-cta {
+  color: #1a1a1a !important;
+}
+body[data-palette="bbt-dark"] .v2-nav-cta:hover {
+  color: #fff !important;
+}
+body[data-palette="bbt-dark"] .v2-btn-primary {
+  color: #1a1a1a;
+}
+body[data-palette="bbt-dark"] .v2-btn-primary:hover {
+  color: #fff;
+}
+body[data-palette="bbt-dark"] .v2-tab.active {
+  color: #1a1a1a;
+}
+body[data-palette="bbt-dark"] .v2-hero-form button {
+  color: #1a1a1a;
+}
+body[data-palette="bbt-dark"] .v2-cta-disclaimer {
+  color: rgba(255, 255, 255, 0.35);
+}
+body[data-palette="bbt-dark"] .final-cta .btn-primary {
+  color: #fff;
+}
+body[data-palette="bbt-dark"] .final-cta .btn-primary:hover {
+  color: #1a1a1a;
+}
+
+/* Festivals marquee — dark glass band with glow in dark mode */
+body[data-palette="bbt-dark"] .festivals-marquee {
+  position: relative;
+  background: #121212;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+}
+body[data-palette="bbt-dark"] .festivals-marquee::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    480px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(233, 93, 154, 0.16),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+body[data-palette="bbt-dark"] .festivals-marquee:hover::before {
+  opacity: 1;
+}
+body[data-palette="bbt-dark"] .festivals-marquee .marquee-eyebrow,
+body[data-palette="bbt-dark"] .festivals-marquee .marquee-track {
+  position: relative;
+  z-index: 1;
+}
+body[data-palette="bbt-dark"] .festivals-marquee .marquee-eyebrow .caption {
+  color: var(--text-muted);
+}
+body[data-palette="bbt-dark"] .festivals-marquee .marquee-item {
+  color: var(--text-dim);
+}
+body[data-palette="bbt-dark"] .festivals-marquee .marquee-item .star {
+  color: var(--accent);
+}

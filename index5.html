@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="home.css" />
   <link rel="stylesheet" href="index5.css" />
 </head>
-<body data-palette="bbt-pink">
+<body data-palette="bbt-dark">
 
   <!-- ===================== HEADER ===================== -->
   <header class="v2-header" id="v2-header">
@@ -31,6 +31,10 @@
         <a href="cinquenta-anos.html" data-i18n="nav-50anos">50 Anos</a>
         <a href="#contato" data-i18n="nav-contato">Contato</a>
       </nav>
+      <button class="theme-toggle" id="v2-theme-toggle" aria-label="Alternar tema">
+        <span class="theme-toggle-icon theme-toggle-moon">🌙</span>
+        <span class="theme-toggle-icon theme-toggle-sun">☀</span>
+      </button>
       <div class="lang-toggle" id="v2-lang-toggle">
         <button data-lang="pt" class="active">PT</button>
         <span class="sep">/</span>
@@ -1566,6 +1570,44 @@
       window.addEventListener('scroll', function() { updateStack(); updateProofHeadFade(); }, { passive: true });
       window.addEventListener('resize', function() { applyCardTops(); updateStack(); updateProofHeadFade(); }, { passive: true });
       updateStack();
+    })();
+
+    // ============================================================
+    // Festivals marquee — glow follows mouse (dark mode)
+    // ============================================================
+    document.querySelectorAll('.festivals-marquee').forEach(function(el) {
+      el.addEventListener('mousemove', function(e) {
+        var rect = this.getBoundingClientRect();
+        var mx = (((e.clientX - rect.left) / rect.width) * 100).toFixed(1);
+        var my = (((e.clientY - rect.top) / rect.height) * 100).toFixed(1);
+        this.style.setProperty('--mx', mx + '%');
+        this.style.setProperty('--my', my + '%');
+      });
+    });
+
+    // ============================================================
+    // Theme toggle (dark ↔ light)
+    // ============================================================
+    (function() {
+      var DARK  = 'bbt-dark';
+      var LIGHT = 'bbt-pink';
+      var KEY   = 'escola-theme';
+
+      function applyTheme(palette) {
+        document.body.setAttribute('data-palette', palette);
+        localStorage.setItem(KEY, palette);
+        var btn = document.getElementById('v2-theme-toggle');
+        if (btn) btn.setAttribute('data-active', palette === DARK ? 'dark' : 'light');
+      }
+
+      // Restore saved preference
+      var saved = localStorage.getItem(KEY);
+      applyTheme(saved === LIGHT ? LIGHT : DARK);
+
+      document.getElementById('v2-theme-toggle').addEventListener('click', function() {
+        var current = document.body.getAttribute('data-palette');
+        applyTheme(current === DARK ? LIGHT : DARK);
+      });
     })();
   </script>
 </body>
